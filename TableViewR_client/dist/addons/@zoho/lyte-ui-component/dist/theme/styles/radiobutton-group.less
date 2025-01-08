@@ -1,0 +1,52 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/radiobuttongroup/radiobutton-group.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{radiobutton}/ui-elements/radiobuttongroup/radiobutton-group.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{radiobutton}/global/@{direction}.less";
+
+/* Radiobutton CSS BEGINS */
+
+.lyteRadioBtnGroupHorizontal {
+	display: flex;
+	flex-direction: row;
+}
+.lyteRadioBtnGroupVertical {
+	display: flex;
+	flex-direction: column;
+}
+.lyteRadioBtnGroupReadOnly {
+	pointer-events: none;
+}
+.lyteRadioBtnGroupHorizontal lyte-radiobutton {
+   .lyteRadioBtnGroupHorizontalRadioButtonMixin();
+	margin-inline-end: @margin-inline-end;
+}
+.lyteRadioBtnGroupHorizontal lyte-radiobutton:last-of-type {
+	margin-inline-end: 0;
+}
+.lyteRadioBtnGroupVertical lyte-radiobutton {
+   .lyteRadioBtnGroupVerticalRadioButtonMixin();
+	margin-bottom: @margin-bottom;
+}
+.lyteRadioBtnGroupVertical lyte-radiobutton:last-of-type {
+	margin-bottom: 0;
+}
+
+.lyteRadioGroupFieldSet {
+	display: flex;
+	border: 0;
+}
+.lyteRadioGroupLegend {
+   .lyteRadioGroupLegendMixin();
+	font-family: @font-family;
+	font-size: @font-size;
+	margin-bottom: @margin-bottom;
+	color: @color;
+}

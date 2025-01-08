@@ -1,0 +1,310 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/betamodal/beta-modal.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{modal}/ui-elements/betamodal/beta-modal.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{modal}/global/@{direction}.less";
+
+.lyteModalBodyWrapper {
+	overflow: hidden;
+}
+.lyteModalWrapper {
+	.lyteModalWrapperMixin();
+	.modalWrapper();
+	--lyte-modal-transition-duration: 1s;
+	position: fixed;
+	z-index: @z-index;
+	left: @left;
+	top: @top;
+	bottom: @bottom;
+	right: @right;
+	display: none;
+	overflow: hidden;
+}
+.lyteBetaModalYield {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+lyte-modal-freeze {
+	.modalFreeze();
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: @z-index;
+	background: @bg;
+	display: block;
+	opacity: @opacity;
+	transition: opacity ease 0.15s;
+	transform: translate3d(0, 0, 0);
+}
+.lyteModalWrapper.noFreeze {
+    pointer-events: none;
+}
+.lyteModalWrapper.noFreeze .lyteModalElement {
+    pointer-events: auto;
+}
+.lyteModalDragRunning.lyteModalElement {
+	transition-duration: 0;
+}
+.lyteModalCenterAlign {
+	align-items: center;
+	justify-content: center;
+}
+.lyteModalWrapper.lyteModalLeftAlign {
+    justify-content: flex-start;
+}
+.lyteModalWrapper.lyteModalRightAlign {
+    justify-content: flex-end;
+}
+.lyteModalWrapper.lyteModalTopAlign {
+    align-items: flex-start;
+}
+.lyteModalWrapper.lyteModalBottomAlign {
+    align-items: flex-end;
+}
+.lyteModalWrapper.lyteModalVerticalMiddleAlign {
+	align-items: center;
+}
+.lyteModalWrapper.lyteModalHorizontalCenterAlign {
+	justify-content: center;
+}
+
+.lyteModalWrapper.lyteModalShow {
+	display: flex;
+}
+
+.lyteModalWrapper.lyteModalFadeAnimation .lyteModalElement {
+	.lyteModalFadeAnimationModalElementMixin();
+	opacity: @opacity;
+	transition: opacity var(--lyte-modal-transition-duration) ease;
+}
+.lyteModalWrapper.lyteModalFadeAnimation.lyteModalShowTransition .lyteModalElement {
+	.lyteModalFadeAnimationShowModalElementMixin();
+	opacity: @opacity;
+}
+
+.lyteModalWrapper.lyteModalZoomAnimation .lyteModalElement {
+	.lyteModalZoomAnimationModalElementMixin();
+	transform: @transform;
+	transition: transform var(--lyte-modal-transition-duration) ease;
+}
+.lyteModalWrapper.lyteModalZoomAnimation.lyteModalShowTransition .lyteModalElement {
+	.lyteModalZoomAnimationShowModalElementMixin();
+	transform: @transform;
+}
+.lyteModalDispNone {
+	display: none;
+}
+
+.lyteModalWithHeight .lyteBetaModalYield,
+.lyteModalWithMaxHeight .lyteBetaModalYield,
+.lyteModalScrollable .lyteBetaModalYield,
+.lyteModalWithHeight lyte-modal-content,
+.lyteModalWithMaxHeight lyte-modal-content,
+.lyteModalScrollable lyte-modal-content {
+	overflow: auto;
+}
+.lyteModalWithContentHeight lyte-modal-content {
+	flex-grow: 1;
+}
+.lyteModalElement {
+	.lyteModalElementMixin();
+	.Modal();
+	background: @bg;
+	box-shadow: @box-shadow;
+	pointer-events: auto;
+	position: relative;
+	z-index: @z-index;
+	max-height: @max-h;
+	box-sizing: border-box;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	font-family: @primaryFont;
+	border: @border;
+	border-radius: @border-radius;
+}
+lyte-modal-header {
+	.modalHeader();
+	font-size: @font-size;
+	color: @color;
+	font-family: @secondaryFont;
+	padding: @padding;
+	overflow-wrap: break-word;
+}
+lyte-modal-content {
+	.modalContent();
+	padding: @padding;
+	font-size: @font-size;
+	color: @color;
+}
+lyte-modal-footer {
+	.modalFooter();
+	padding: @padding;
+}
+lyte-modal-header, lyte-modal-content, lyte-modal-footer {
+	display: block;
+	box-sizing: border-box;
+}
+lyte-modal-footer.left {
+	text-align: @value-textalign-left;
+}
+lyte-modal-footer.center {
+	text-align: center;
+}
+lyte-modal-footer.right {
+	text-align: @value-textalign-right;
+}
+lyte-modal-footer lyte-button {
+	.modalFooterBtn();
+	@{property-margin-left}: @margin-left;
+}
+lyte-modal-footer lyte-button:first-child {
+	@{property-margin-left}: 0;
+}
+.lyteModalHeaderDraggable {
+	cursor: move;
+	touch-action: none;
+}
+.lyteModalClose {
+	.ModalClose();
+	& when (@useCssMaskForBg = true) {
+		.lyteMaskBgMixin(@mask-img, @mask-pos, @bg-color);
+	}
+	& when not (@useCssMaskForBg = true) {
+		background-image: @bg-img;
+		background-position: @bg-pos;
+	}
+	width: @w;
+	height: @h;
+	opacity: @opacity;
+	cursor: pointer;
+	position: absolute;
+	top: @top;
+	@{property-right}: @right;
+	display: inline-block;
+	transform: scale(1.3);
+	z-index: @z-index;
+	outline: none;
+}
+.lyteModalClose:hover {
+	.ModalCloseHover();
+	opacity: @opacity;
+}
+
+.lyteModalWrapper.lyteModalSlideFromLeft .lyteModalElement {
+    .lyteModalSlideFromLeftModalElementMixin();
+	transition: @value-position-left var(--lyte-modal-transition-duration) ease, transform var(--lyte-modal-transition-duration) ease;
+	@{property-left}: @left;
+	transform: @transform;
+}
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromLeft .lyteModalElement {
+	.lyteModalIgnoreDirectionSlideFromLeftModalElementMixin();
+	transition: left var(--lyte-modal-transition-duration) ease, transform var(--lyte-modal-transition-duration) ease;
+	left: @left;
+	transform: @transform;
+}
+.lyteModalWrapper.lyteModalSlideFromRight .lyteModalElement {
+    .lyteModalSlideFromRightModalElementMixin();
+	transition: @value-position-right var(--lyte-modal-transition-duration) ease, transform var(--lyte-modal-transition-duration) ease;
+	@{property-right}: @right;
+	transform: @transform;
+}
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromRight .lyteModalElement {
+    .lyteModalIgnoreDirectionSlideFromRightModalElementMixin();
+	transition: right var(--lyte-modal-transition-duration) ease, transform var(--lyte-modal-transition-duration) ease;
+	right: @right;
+	transform: @transform;
+}
+.lyteModalWrapper.lyteModalSlideFromTop .lyteModalElement {
+	.lyteModalSlideFromTopModalElementMixin();
+	transition: top var(--lyte-modal-transition-duration) ease, transform var(--lyte-modal-transition-duration) ease;
+	top: @top;
+	transform: @transform;
+}
+.lyteModalWrapper.lyteModalSlideFromBottom .lyteModalElement {
+	.lyteModalSlideFromBottomModalElementMixin();
+	transition: bottom var(--lyte-modal-transition-duration) ease, transform var(--lyte-modal-transition-duration) ease;
+	bottom: @bottom;
+	transform: @transform;
+}
+
+
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromLeft.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromLeft.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromRight.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromRight.lyteModalShowTransition .lyteModalElement {
+	transform: translateX(0);
+}
+.lyteModalWrapper.lyteModalSlideFromBottom.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromTop.lyteModalShowTransition .lyteModalElement {
+	transform: translateY(0);
+}
+
+.lyteModalWrapper.lyteModalSlideFromTop.lyteModalVerticalMiddleAlign .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromTop.lyteModalCenterAlign .lyteModalElement {
+	.lyteModalSlideFromTopCenterAlignModalElementMixin();
+	transform: @transform;
+}
+.lyteModalWrapper.lyteModalSlideFromBottom.lyteModalVerticalMiddleAlign .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromBottom.lyteModalCenterAlign .lyteModalElement {
+	.lyteModalSlideFromBottomCenterAlignModalElementMixin();
+	transform: @transform;
+}
+.lyteModalWrapper.lyteModalSlideFromBottom.lyteModalVerticalMiddleAlign.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromTop.lyteModalVerticalMiddleAlign.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromBottom.lyteModalCenterAlign.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromTop.lyteModalCenterAlign.lyteModalShowTransition .lyteModalElement {
+	transform: translateY(0);
+}
+
+
+.lyteModalWrapper.lyteModalSlideFromLeft.lyteModalHorizontalCenterAlign .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromLeft.lyteModalCenterAlign .lyteModalElement {
+	.lyteModalSlideFromLeftCenterAlignModalElementMixin();
+	transform: @transform;
+}
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromLeft.lyteModalHorizontalCenterAlign .lyteModalElement,
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromLeft.lyteModalCenterAlign .lyteModalElement {
+	.lyteModalIgnoreDirectionSlideFromLeftCenterAlignModalElementMixin();
+	transform: @transform;
+}
+.lyteModalWrapper.lyteModalSlideFromRight.lyteModalHorizontalCenterAlign .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromRight.lyteModalCenterAlign .lyteModalElement {
+	.lyteModalSlideFromRightCenterAlignModalElementMixin();
+	transform: @transform;
+}
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromRight.lyteModalHorizontalCenterAlign .lyteModalElement,
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromRight.lyteModalCenterAlign .lyteModalElement {
+	.lyteModalIgnoreDirectionSlideFromRightCenterAlignModalElementMixin();
+	transform: @transform;
+}
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromLeft.lyteModalHorizontalCenterAlign.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromLeft.lyteModalCenterAlign.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromRight.lyteModalHorizontalCenterAlign.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalIgnoreDirection.lyteModalSlideFromRight.lyteModalCenterAlign.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromRight.lyteModalHorizontalCenterAlign.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromLeft.lyteModalHorizontalCenterAlign.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromRight.lyteModalCenterAlign.lyteModalShowTransition .lyteModalElement,
+.lyteModalWrapper.lyteModalSlideFromLeft.lyteModalCenterAlign.lyteModalShowTransition .lyteModalElement {
+	transform: translateX(0);
+}
+
+.lyteModalYieldWithPadding {
+	display: flex;
+	flex-direction: column;
+	max-height: inherit;
+	height: inherit;
+	padding: var(--lyte-modal-yield-padding);
+	box-sizing: border-box;
+}

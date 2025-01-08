@@ -1,0 +1,14 @@
+@import (optional) "../themes/@{themeName}/ui-elements/colorpicker/colorpicker.css-variables.less";
+
+& when (@stylesWithVariable = true) {
+	@import "../styles/colorpicker.less";
+	.lyteCPImgDiv() {
+		@bg-img: url(../../images/lyteCPbgGradient.png);
+	}
+	.ColorPicker__transparentbg() {
+		@bg: url(../../images/lyteCP_op_slider_bg.png);
+	}
+	.CP__transparentbg() {
+		@bg: url(../../images/lyteCP_op_slider_bg.png);
+	}
+}

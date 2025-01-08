@@ -1,0 +1,220 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/dock/dock.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{dock}/ui-elements/datetimeinput/dock.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{dock}/global/@{direction}.less";
+
+.lyteDockYield {
+    .lyteDockYieldMixin();
+    position: absolute;
+    top: .lyteDockYieldMixin[@top];
+    bottom: .lyteDockYieldMixin[@bottom];
+    left: .lyteDockYieldMixin[@left];
+    right: .lyteDockYieldMixin[@right];
+    overflow: hidden;
+    pointer-events: none;
+    display: flex;
+    padding: .lyteDockYieldMixin[@padding];
+}
+.lyteDockTopAlign {
+    align-items: flex-start;
+    justify-content: center;
+}
+.lyteDockBottomAlign {
+    align-items: flex-end;
+    justify-content: center;
+}
+.lyteDockLeftAlign {
+    justify-content: flex-start;
+    align-items: center;
+}
+.lyteDockRightAlign{
+    justify-content: flex-end;
+    align-items: center;
+}
+.lyteDock{
+    .lyteDockMixin();
+    border: .lyteDockMixin[@border];
+    background: .lyteDockMixin[@bg];
+    display: flex;
+    border-radius: .lyteDockMixin[@border-radius];
+    transition: 0.2s transform linear,width 0.2s linear;
+    justify-content: center;
+    box-sizing: border-box;
+    pointer-events: auto;
+}
+
+.lyteDockIconWrapper {
+    .lyteDockIconWrapperMixin();
+    width: .lyteDockIconWrapperMixin[@w];
+    height: .lyteDockIconWrapperMixin[@h];
+    display: flex;
+    justify-content: flex-end;  
+    gap: .lyteDockIconWrapperMixin[@gap];
+    align-items: center;
+    position: relative;
+    transition: width 0.2s linear, height 0.2s linear, padding 0.2s linear;
+}
+.lyteDockPreventTransition,
+.lyteDockPreventTransition .lyteDockIconWrapper{
+    transition: none;
+}
+.lyteDockRightAlign .lyteDockIconWrapper,
+.lyteDockLeftAlign .lyteDockIconWrapper {
+    .lyteDockRightLeftIconWrapperMixin();
+    padding: .lyteDockRightLeftIconWrapperMixin[@padding];
+}
+.lyteDockTopAlign .lyteDockIconWrapper,
+.lyteDockBottomAlign .lyteDockIconWrapper {
+    .lyteDockTopBottomIconWrapperMixin();
+    padding: .lyteDockTopBottomIconWrapperMixin[@padding];
+}
+.lyteIcon {
+    .lyteIconMixin();
+    width: .lyteIconMixin[@w];
+    height: .lyteIconMixin[@h];
+    pointer-events: none;
+}
+.lyteDockTopAlign .lyteDock,
+.lyteDockBottomAlign .lyteDock {
+    .lyteDockTopBottomDockMixin();
+    max-height: .lyteDockTopBottomDockMixin[@max-h];
+    /*  --lyte-dock-icon-max-size   */
+    min-height: .lyteDockTopBottomDockMixin[@min-h];
+    /*  --lyte-dock-icon-min-size   */
+    padding: .lyteDockTopBottomDockMixin[@padding];
+}
+.lyteDockRightAlign .lyteDock,
+.lyteDockLeftAlign .lyteDock {
+    .lyteDockRightLeftDockMixin();
+    flex-direction: column;
+    max-width: .lyteDockRightLeftDockMixin[@max-w];
+    min-width: .lyteDockRightLeftDockMixin[@min-w];
+    padding: .lyteDockRightLeftDockMixin[@padding];
+}
+.lyteDockTopAlign .lyteDock {
+    .lyteDockTopAlignDockMixin();
+    align-items: flex-start;
+    transform: .lyteDockTopAlignDockMixin[@transform];
+}
+.lyteDockBottomAlign .lyteDock {
+    .lyteDockBottomAlignDockMixin();
+    align-items: flex-end;
+    transform: .lyteDockBottomAlignDockMixin[@transform];
+}
+.lyteDockRightAlign .lyteDock {
+    .lyteDockRightAlignDockMixin();
+    align-items: flex-end;
+    transform: .lyteDockRightAlignDockMixin[@transform];
+}
+.lyteDockLeftAlign .lyteDock {
+    .lyteDockLeftAlignDockMixin();
+    align-items: flex-start;
+    transform: .lyteDockLeftAlignDockMixin[@transform];
+}
+.lyteDockTopAlign.lyteDockZoomed {
+    .lyteDockTopAlignZoomedMixin();
+    padding-top: .lyteDockTopAlignZoomedMixin[@padding-top];
+}
+.lyteDockTopAlign.lyteDockZoomed1 {
+    .lyteDockTopAlignZoomed1Mixin();
+    padding-top: .lyteDockTopAlignZoomed1Mixin[@padding-top];
+}
+.lyteDockTopAlign.lyteDockZoomed2 {
+    .lyteDockTopAlignZoomed2Mixin();
+    padding-top: .lyteDockTopAlignZoomed2Mixin[@padding-top];
+}
+.lyteDockRightAlign.lyteDockZoomed{
+    .lyteDockRightAlignZoomedMixin();
+    @{property-padding-right}: .lyteDockRightAlignZoomedMixin[@padding-right];
+}
+.lyteDockRightAlign.lyteDockZoomed1{
+    .lyteDockRightAlignZoomed1Mixin();
+    @{property-padding-right}: .lyteDockRightAlignZoomed1Mixin[@padding-right];
+}
+.lyteDockRightAlign.lyteDockZoomed2{
+    .lyteDockRightAlignZoomed2Mixin();
+    @{property-padding-right}: .lyteDockRightAlignZoomed2Mixin[@padding-right];
+}
+.lyteDockLeftAlign.lyteDockZoomed {
+    .lyteDockLeftAlignZoomedMixin();
+    @{property-padding-left}: .lyteDockLeftAlignZoomedMixin[@padding-left];
+}
+.lyteDockLeftAlign.lyteDockZoomed1 {
+    .lyteDockLeftAlignZoomed1Mixin();
+    @{property-padding-left}: .lyteDockLeftAlignZoomed1Mixin[@padding-left];
+}
+.lyteDockLeftAlign.lyteDockZoomed2 {
+    .lyteDockLeftAlignZoomed2Mixin();
+    @{property-padding-left}: .lyteDockLeftAlignZoomed2Mixin[@padding-left];
+}
+.lyteDockBottomTransform {
+    .lyteDockBottomTransformMixin();
+    transform: .lyteDockBottomTransformMixin[@transform];
+}
+.lyteDockBottomAlign.lyteDockZoomed {
+    .lyteDockBottomAlignZoomedMixin();
+    padding-bottom: .lyteDockBottomAlignZoomedMixin[@padding-bottom];
+}
+.lyteDockBottomAlign.lyteDockZoomed1 {
+    .lyteDockBottomAlignZoomed1Mixin();
+    padding-bottom: .lyteDockBottomAlignZoomed1Mixin[@padding-bottom];
+}
+.lyteDockBottomAlign.lyteDockZoomed2 {
+    .lyteDockBottomAlignZoomed2Mixin();
+    padding-bottom: .lyteDockBottomAlignZoomed2Mixin[@padding-bottom];
+}
+.lyteIcon.lyteDockEntered {
+    .lyteIconEnteredMixin();
+    width: .lyteIconEnteredMixin[@w];
+    height: .lyteIconEnteredMixin[@h];
+}
+.lyteDockZoomed {
+    .lyteDockZoomedMixin();
+    width: .lyteDockZoomedMixin[@w];
+    height: .lyteDockZoomedMixin[@h];
+}
+.lyteDockZoomed1 {
+    .lyteDockZoomed1Mixin();
+    width: .lyteDockZoomed1Mixin[@w];
+    height: .lyteDockZoomed1Mixin[@h];
+}
+.lyteDockZoomed2 {
+    .lyteDockZoomed2Mixin();
+    width: .lyteDockZoomed2Mixin[@w];
+    height: .lyteDockZoomed2Mixin[@h];
+}
+.lyteDockHidden {
+    display: none;
+}
+.lyteDockTooltip {
+    .lyteDockTooltipMixin();
+    padding: .lyteDockTooltipMixin[@padding];
+    background: .lyteDockTooltipMixin[@bg];
+    display: none;
+    color: .lyteDockTooltipMixin[@color];
+    border-radius: .lyteDockTooltipMixin[@border-radius];
+}
+.lyteDockIconWrapper:hover .lyteDockTooltip {
+    display: block;
+}
+.lyteDockLeftAlign .lyteDockIconWrapper {
+    flex-direction: row-reverse;
+}
+.lyteDockTopAlign .lyteDockIconWrapper {
+    flex-direction: column-reverse;
+}
+.lyteDockBottomAlign .lyteDockIconWrapper {
+    flex-direction: column;
+}
+.lyteDock.lyteDockShow {
+    .lyteDockShowMixin();
+    transform: .lyteDockShowMixin[@transform];
+}

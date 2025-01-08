@@ -1,0 +1,27 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-rating-smiley-very-poor-icon-position: -67px -275px;
+  --lyte-rating-smiley-poor-icon-position: -99px -275px;
+  --lyte-rating-smiley-average-icon-position: -130px -275px;
+  --lyte-rating-smiley-good-icon-position: -36px -275px;
+  --lyte-rating-smiley-very-good-icon-position: -5px -275px;
+  --lyte-rating-smiley-very-poor-rated-icon-position: -226px -275px;
+  --lyte-rating-smiley-poor-rated-icon-position: -258px -275px;
+  --lyte-rating-smiley-average-rated-icon-position: -289px -275px;
+  --lyte-rating-smiley-good-rated-icon-position: -195px -275px;
+  --lyte-rating-smiley-very-good-rated-icon-position: -164px -275px;
+  --lyte-rating-like-empty-icon-position: -268px -232px;
+  --lyte-rating-dislike-empty-icon-position: -332px -237px;
+  --lyte-rating-like-empty-hover-icon-position: -300px -232px;
+  --lyte-rating-dislike-empty-hover-icon-position: -363px -237px;
+  --lyte-rating-like-rated-icon-position: -300px -232px;
+  --lyte-rating-dislike-rated-icon-position: -363px -237px;
+  --lyte-rating-toggle-empty-icon-position: -4px -234px;
+  --lyte-rating-toggle-fill-icon-position: -64px -234px;
+}

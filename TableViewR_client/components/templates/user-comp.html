@@ -1,0 +1,18 @@
+<template tag-name="user-comp">
+
+
+
+
+
+    <lyte-dropdown class="usertables" lt-prop-placeholder="your tables" lt-prop-class="class-check"
+        lt-prop-user-value="name" lt-prop-system-value="value" on-option-selected="{{method('fetchTable',fromWhere)}}"
+        on-before-show="{{method('getTableList')}}">
+    </lyte-dropdown>
+
+
+
+
+
+
+
+</template>

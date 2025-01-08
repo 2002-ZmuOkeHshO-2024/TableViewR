@@ -1,0 +1,31 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-colorpicker-border-color: #444;
+  --lyte-colorpicker-boxshadow-color: rgba(255, 255, 255, 0.1);
+  --lyte-colorpicker-colorpan-border-color: rgba(255, 255, 255, 0.1);
+  --lyte-colorpicker-colorpan-hover-border-color: rgba(255, 255, 255, 0.2);
+  --lyte-colorpicker-morelink-hover-bg: #373737;
+  --lyte-colorpicker-common-text-color: var(--lyte-common-text-color2);
+  --lyte-colorpicker-advanced-link-text-color: #fff;
+  --lyte-colorpicker-color-slider-handle-border-color: #fff;
+  --lyte-colorpicker-input-border-color: #6f6f6f;
+  --lyte-colorpicker-input-hover-border-color: #c1c1c1;
+  --lyte-colorpicker-formatdropdown-text-color: #ddd;
+  --lyte-colorpicker-formatdropdown-active-text-color: var(--lyte-common-text-color);
+  --lyte-colorpicker-selectedtick-color: #fff;
+  --lyte-colorpicker-whitebg-selectedtick-color: #333;
+  --lyte-colorpicker-sliderhandle-border-color: #000;
+  --lyte-colorpicker-sliderhandle-bg: #fff;
+  --lyte-colorpicker-formatlabel-text-color: #9b9b9b;
+  --lyte-colorpicker-font-size: var(--lyte-font-size-small);
+  --lyte-colorpicker-format-dropbtn-font-size: var(--lyte-font-size-xs);
+  --lyte-colorpicker-dropbox-item-font-size: var(--lyte-font-size-xs);
+  --lyte-colorpicker-formatlabel-font-size: var(--lyte-font-size-xs);
+  --lyte-colorpicker-inputvalue-font-size: var(--lyte-font-size-xs);
+}

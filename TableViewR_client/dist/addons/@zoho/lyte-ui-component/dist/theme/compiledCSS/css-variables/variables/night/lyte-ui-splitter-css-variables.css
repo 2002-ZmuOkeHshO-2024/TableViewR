@@ -1,0 +1,16 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-splitter-bg: var(--lyte-theme-body-bg);
+  --lyte-splitter-text-color: var(--lyte-common-text-color);
+  --lyte-splitter-handle-bg: #444;
+  --lyte-splitter-handle-hover-bg: #555;
+  --lyte-splitter-handle-icon-bg: #fff;
+  --lyte-splitter-border-color: #555;
+  --lyte-splitter-resizing-handle-icon-bg: #fff;
+}

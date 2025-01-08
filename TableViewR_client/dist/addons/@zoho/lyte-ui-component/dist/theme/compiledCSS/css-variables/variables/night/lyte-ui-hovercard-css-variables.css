@@ -1,0 +1,12 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-hover-card-bg: #222;
+  --lyte-hover-card-text-color: #fff;
+  --lyte-hover-card-zindex: var(--lyte-level5-zindex);
+}

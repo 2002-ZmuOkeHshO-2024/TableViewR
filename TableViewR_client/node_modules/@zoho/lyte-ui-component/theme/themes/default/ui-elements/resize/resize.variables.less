@@ -1,0 +1,59 @@
+.lyteResizeHandleMixin() {
+    @w: 8px;
+    @h: 8px;
+    @bg: #5ba1e5;
+    @transform: translate( -50%, -50%);
+}
+.lyteResizeNMixin() {
+    @top: 0;
+    @left: 50%;
+}
+.lyteResizeNWMixin() {
+    @top: 0;
+    @left: 0%;
+}
+.lyteResizeNEMixin() {
+    @top: 0;
+    @left: 100%;
+}
+.lyteResizeSMixin() {
+    @left: 50%;
+    @top: 100%;
+}
+.lyteResizeSWMixin() {
+    @left: 0%;
+    @top: 100%;
+}
+.lyteResizeSEMixin() {
+    @left: 100%;
+    @top: 100%;
+}
+.lyteResizeWMixin() {
+    @left: 0;
+    @top: 50%;
+}
+.lyteResizeEMixin() {
+    @left: 100%;
+    @top: 50%;
+}
+.lyteResizeInfoDivMixin() {
+    @border: 1px solid #d6d6d6;
+    @padding: 8px;
+    @z-index: @lyteResizeInfoDivzIndex;
+}
+
+.lyteResizeCursorNELyteResizeCursorSW() {
+	@cursor: nesw-resize;
+}
+
+.lyteResizeCursorNWLyteResizeCursorSE() {
+	@cursor: nwse-resize;
+}
+
+.lyteResizeCursorNLyteResizeCursorS() {
+	@cursor: ns-resize;
+}
+
+.lyteResizeCursorWLyteResizeCursorE() {
+	@cursor: ew-resize;
+}

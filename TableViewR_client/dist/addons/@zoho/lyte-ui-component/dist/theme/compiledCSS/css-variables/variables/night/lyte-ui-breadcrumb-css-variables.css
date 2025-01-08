@@ -1,0 +1,14 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-breadcrumb-text-color: #ccc;
+  --lyte-breadcrumb-hover-text-color: #eee;
+  --lyte-breadcrumb-active-text-color: var(--lyte-theme-active-element-color);
+  --lyte-breadcrumb-body-font-size: var(--lyte-font-size-medium);
+  --lyte-breadcrumb-item-font-size: var(--lyte-font-size-medium);
+}

@@ -1,0 +1,16 @@
+.lyteSkipToClass {
+	display: block;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: #fff;
+	color: #5ba1e5;
+	padding: 5px 10px;
+	font-size: 13px;
+}
+.lyteSkipToClass:focus {
+	outline: 1px solid #5ba1e5;
+	opacity: 1;
+}

@@ -1,0 +1,26 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-dms-button-border-color: #d6d6d6;
+  --lyte-dms-button-bg: #fff;
+  --lyte-dms-button-hover-border-color: #c1c1c1;
+  --lyte-dms-wrap-box-shadow: rgba(0, 0, 0, 0.05);
+  --lyte-dms-wrap-border-color: #E5E8EA;
+  --lyte-dms-selection-container-bg: #fff;
+  --lyte-dms-selection-container-border-left-color: #E5E8EA;
+  --lyte-dms-calc-wrap-border-bottom-color: #BABDBF;
+  --lyte-dms-date-calc-color: #0984E3;
+  --lyte-dms-date-calc-border-color: #0984E3;
+  --lyte-dms-day-calc-color: #152229;
+  --lyte-dms-selected-days-color: #292C2E;
+  --lyte-dms-remove-icon-bg: #6D6E70;
+  --lyte-dms-remove-all-color: #E74C3C;
+  --lyte-dms-calender-popup-border-right-color: #E5E8EA;
+  --lyte-dms-button-placeholder-color: #808080;
+  --lyte-dms-selection-container-font-size: var(--lyte-font-size-medium);
+}

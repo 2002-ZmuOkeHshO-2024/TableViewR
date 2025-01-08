@@ -1,0 +1,83 @@
+.lyteImagePlayerMixin() {
+
+	@min-height: 200px;
+}
+.lyteImageItemImgMixin() {
+	@w: 100%;
+}
+.lyteImagePlayerSliderMixin() {
+	@h: 3px;
+	@bg: #dee2ed;
+	@outline: none;
+	@border-radius: 10px;
+}
+.lyteImagePlayerSliderHoverMixin() {
+	@h: 7px;
+}
+.lyteImagePlayerFillMixin() {
+	@h: 100%;
+	@bg: #5ba1e5;
+	@border-radius: 10px;
+	@w: var(--lyte-image-player-fill-width);
+}
+.lyteImagePlayerControlMixin() {
+	@background-color: #666;
+	@padding: 10px;
+	@font-size: 12px;
+	@color: #fff;
+	@gap: 10px;
+}
+.lyteImagePlayerHighlightMixin() {
+	@w: 5px;
+	@h: 15px;
+	@border: 3px solid red;
+	@border-top: none;
+	@border-bottom: none;
+	@left: var(--lyte-image-player-highlight-position);
+}
+.lyteImagePlayerSliderHandlerMixin() {
+	@w: 8px;
+	@h: 8px;
+	@top: 50%;
+	@bg: #fff;
+	@transform: translateX(-50%) translateY(-50%);
+	@border-radius: 50%;
+	@left: var(--lyte-image-player-slider-handler-position);
+	@outline: none;
+}
+.lyteImagePlayerSliderHoverLyteImagePlayerSliderHandlerMixin() {
+	@w: 16px;
+	@h: 16px;
+}
+.lyteImagePlayerPlayIconMixin() {
+	@border: 0;
+	@background-color: transparent;
+	@padding: 0 3px;
+}
+.lyteImagePlayerPlayIconAfterMixin() {
+	@mask-image: @lyteVideoSprite;
+	@mask-position: -210px -5px;
+	@w: 14px;
+	@h: 19px;
+	@background-color: #fff;
+}
+.lyteImagePlayerPausedMixin() {
+	@mask-position: -186px -4px;
+}
+.lyteImagePlayerLyteLoaderFreezeMixin() {
+	@background-color: #444;
+}
+.lyteImagePlayerLyteLoaderTimeoutMessageMixin() {
+	@color: #eee;
+}
+.lyteImagePlayerFullscreenMixin() {
+	@mask-image: @lyteVideoSprite;
+	@mask-position: -33px -6px;
+	@background-color: #fff;
+	@border: 0;
+	@w: 19px;
+	@h: 18px;
+}
+.fullscreenMixin() {
+	@mask-position: -59px -5px;
+}

@@ -1,0 +1,145 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/datetimeinput/datetime-input.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{datetimeinput}/ui-elements/datetimeinput/datetime-input.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{datetimeinput}/global/@{direction}.less";
+
+
+lyte-datetime-input {
+	display: inline-block;
+}
+.lyteDateTimeInputWrapper {
+	display: flex;
+	position: relative;
+}
+.lyteDateTimeInputBox .lyteDateTimeInputWrapper {
+	.lyteDateTimeInputBoxWrapperMixin();
+	border: @border;
+	border-radius: @border-radius;
+	align-items: center;
+}
+.lyteDateTimeInputBox:hover .lyteDateTimeInputWrapper {
+	.lyteDateTimeInputBoxHoverWrapperMixin();
+	border: @border;
+}
+.lyteDateInputOpened.lyteDateTimeInputBox .lyteDateTimeInputWrapper,
+.lyteDateInputFocused.lyteDateTimeInputBox .lyteDateTimeInputWrapper {
+	.lyteDateInputFocusedBoxWrapperMixin();
+	border: @border;
+}
+.lyteDateTimeInputBox .lyteDateTimeInputWrapper > input {
+	.lyteDateTimeInputBoxWrapperInputMixin();
+	@{property-border-right}: @border-right;
+	border-radius: @border-radius;
+}
+.lyteDateTimeInputBox .lyteDateTimeInputWrapper > div input {
+	.lyteDateTimeInputBoxWrapperDivInputMixin();
+	border-radius: @border-radius;
+}
+.lyteDateTimeInputFlat .lyteDateTimeInputWrapper {
+	.lyteDateTimeInputFlatWrapperMixin();
+	border-bottom: @border-bottom;
+	align-items: flex-end;
+}
+.lyteDateTimeInputFlat:hover .lyteDateTimeInputWrapper {
+	.lyteDateTimeInputFlatHoverWrapperMixin();
+	border-bottom: @border-bottom;
+}
+.lyteDateInputOpened.lyteDateTimeInputFlat .lyteDateTimeInputWrapper,
+.lyteDateInputFocused.lyteDateTimeInputFlat .lyteDateTimeInputWrapper {
+	.lyteDateInputFocusedFlatWrapperMixin();
+	border-bottom: @border-bottom;
+}
+.lyteDateTimeInputWrapper input {
+	.lyteDateTimeInputWrapperInputMixin();
+	font-family: @font-family;
+	font-size: @font-size;
+	background: @bg;
+	color: @color;
+	border: @border;
+	box-shadow: @box-shadow;
+	outline: @outline;
+}
+.lyteDateTimeInputBox input {
+	.lyteDateTimeInputBoxInputMixin();
+	padding: @padding;
+}
+.lyteDateTimeInputFlat input {
+	.lyteDateTimeInputFlatInputMixin();
+	padding: @padding;
+}
+.lyteDateTimeInputWrapper lyte-drop-button {
+	.lyteDateTimeInputWrapperDropButtonMixin();
+	padding: @padding;
+}
+.lyteDateTimeInputWrapper .lyteDummyEventContainer:focus lyte-drop-button,
+.lyteDateTimeInputWrapper .lyteDummyEventContainer:focus lyte-drop-button:hover,
+.lyteDateTimeInputWrapper lyte-drop-button:hover,
+.lyteDateTimeInputWrapper lyte-drop-button {
+	.lyteDateTimeInputWrapperDropButtonMixin();
+	border: @border;
+	box-shadow: @box-shadow;
+}
+.lyteDateTimeInputWormhole {
+	.lyteDateTimeInputWormholeMixin();
+	position: absolute;
+	left: @left;
+	top: @top;
+	z-index: @z-index;
+}
+.lyteDateTimeInputHidden {
+	display: none;
+}
+.lyteDateTimezone {
+	.lyteDateTimezoneMixin();
+	position: absolute;
+	@{property-right}: @right;
+	top: @top;
+	bottom: @bottom;
+	display: flex;
+	align-items: center;
+	padding: @padding;
+	color: @color;
+}
+.lyteDateInputCalendarIcon {
+	.lyteDateInputCalendarIconMixin();
+	-webkit-mask: @mask-img;
+    mask: @mask-img;
+    width: @w;
+    height: @h;
+    background-color: @bg-color;
+    position: absolute;
+    @{property-left}: @left;
+	cursor: pointer;
+}
+.lyteDateTimeInputBox[lt-prop-aria="true"] .lyteDateTimeInputWrapper > input {
+	.lyteDateTimeInputBoxAriaFirstInputMixin();
+	@{property-padding-right}: @padding-right;
+    width: @w;
+    box-sizing: border-box;
+}
+[lt-prop-aria="true"] .lyteDateTimeInputWrapper div {
+	.lyteDateTimeInputWrapperDivAriaMixin();
+	width: @w;
+}
+.lyteDateTimeInputFlat[lt-prop-aria="true"] .lyteDateInputCalendarIcon {
+	.lyteDateTimeInputFlatAriaCalendarIconMixin();
+	bottom: @bottom;
+}
+.lyteDateInputCalendarIcon:hover {
+	.lyteDateTimeInputCalendarIconHoverMixin();
+	background-color: @bg-color;
+}
+.lyteDateInputOpened .lyteDateInputCalendarIcon,
+.lyteDateInputFocused .lyteDateInputCalendarIcon {
+	.lyteDateTimeInputCalendarIconFocusMixin();
+	outline: @outline;
+	background-color: @bg-color;
+}

@@ -1,0 +1,23 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-chbox-label-text-color: var(--lyte-common-text-color);
+  --lyte-chbox-label-hover-text-color: var(--lyte-common-text-hover-color);
+  --lyte-chbox-font-size: var(--lyte-font-size-medium);
+  --lyte-chbox-label-font-size: var(--lyte-font-size-small);
+  --lyte-chbox-switch-bg: #d3d3d3;
+  --lyte-chbox-switch-bg-on-mode: var(--lyte-theme-active-element-bg);
+  --lyte-chbox-circle-bg: #fff;
+  --lyte-chbox-slider-circle-bg: #fff;
+  --lyte-chbox-slider-circle-boxshadow-color: rgba(34, 36, 38, 0.15);
+  --lyte-chbox-slider-bar-bg: #b5b1b1;
+  --lyte-chbox-slider-checked-bar-bg: #000;
+  --lyte-chbox-slider-circle-disabled-bg: #f5f5f5;
+  --lyte-chbox-primary-icon-position: -35px -162px;
+  --lyte-chbox-primary-checked-icon-position: -8px -162px;
+}

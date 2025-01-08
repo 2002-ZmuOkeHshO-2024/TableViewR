@@ -1,0 +1,28 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+:root {
+  --lyte-follower-bg: #222;
+  --lyte-follower-text-color: #fff;
+  --lyte-follower-zindex: var(--lyte-level5-zindex);
+}
+/* rtl files loading */
+.lyteFollowerWrapper {
+  position: absolute;
+  font-family: var(--lyte-primary-font);
+  font-size: 13px;
+  padding: 3px 8px;
+  background: var(--lyte-follower-bg);
+  color: var(--lyte-follower-text-color);
+  border-radius: 2px;
+  z-index: var(--lyte-follower-zindex);
+}
+.lyteFollowerContent {
+  white-space: pre-wrap;
+}

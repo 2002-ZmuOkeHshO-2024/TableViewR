@@ -1,0 +1,592 @@
+/* General Fixes and Updates */
+.table-container {
+
+
+    background-image: url('table-view.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    grid-template-columns: 1fr;
+    gap: 1%;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.table {
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    gap: 1.5%;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+
+.table> :nth-child(1):hover {
+
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px 5px rgba(42, 130, 196, 0.689);
+}
+
+
+
+.query-element {
+
+    display: grid;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 0.7fr 11.5fr 1fr;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+
+
+}
+
+
+.query-label {
+
+    border: 1px solid rgb(110, 195, 223);
+    padding: 7px 70px;
+    grid-row: 1/2;
+    display: flex;
+    align-self: flex-start;
+    justify-self: center;
+    font-size: 20px;
+    color: rgb(122, 230, 245);
+
+}
+
+.query1-element {
+
+    display: flex;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    height: 100%;
+    width: 100%;
+
+
+}
+
+.queryInput {
+
+
+    height: 100%;
+    width: 100%;
+
+
+}
+
+
+.executebutton {
+
+    display: flex;
+    grid-row: 3/-1;
+    grid-column: 1/2;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+
+
+
+}
+
+
+.execute-button {
+
+    font-family: "Arimo", serif;
+    background-color: #6f1660;
+    padding: 10px 30px;
+    border-radius: 100px;
+    font-size: 18px;
+    color: white;
+    border: none
+}
+
+.execute-button:hover {
+
+
+    font-weight: 1000;
+    font-family: "Arimo", serif;
+    color: rgb(74, 69, 69);
+    padding: 13px 33px;
+    border-radius: 100px;
+    background-color: #e36ad7;
+    border: none;
+    box-shadow: -5px 5px 10px rgb(0, 0, 0);
+
+
+
+
+}
+
+.tableview {
+
+    display: grid;
+    grid-column: 2/-1;
+    grid-template-rows: 12fr 1fr;
+    grid-template-columns: 1fr;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+
+
+
+.table1-view {
+
+
+    height: 100%;
+    width: 100%;
+    grid-row: 1/2;
+    grid-column: 1/2;
+
+    overflow-y: auto;
+    overflow-x: auto;
+
+}
+
+.table2-view {
+
+
+
+    margin-right: 1%;
+}
+
+.border {
+
+    display: grid;
+    grid-row: 2/-1;
+    grid-column: 1/2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 1fr;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+.add-option {
+
+    display: flex;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin-top: 22px;
+    margin-right: 10px;
+}
+
+
+.add-button {
+
+
+    font-family: "Arimo", serif;
+    background-color: #0f6207;
+    padding: 10px 30px;
+    border-radius: 100px;
+    font-size: 18px;
+    color: white;
+    border: none;
+}
+
+.add-button:hover {
+
+    font-weight: 1000;
+    font-family: "Arimo", serif;
+    color: rgb(74, 69, 69);
+    padding: 13px 33px;
+    border-radius: 100px;
+    background-color: #84ec69;
+    border: none;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+
+}
+
+
+
+
+.logout1 {
+    display: flex;
+    grid-column: 4/-1;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+}
+
+.pagination {
+
+    display: grid;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 1fr 0.8fr 1fr 1fr;
+    gap: 1%;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+.prev {
+
+    display: flex;
+    align-self: center;
+    justify-self: flex-end;
+    grid-column: 2/3;
+
+
+}
+
+.view {
+
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    grid-column: 3/4;
+
+}
+
+
+.next {
+
+    display: flex;
+    align-self: center;
+    justify-self: flex-start;
+    grid-column: 4/5;
+
+
+}
+
+.next-button,
+.prev-button {
+
+    padding: 0px 20px;
+    background-color: #3b36d8c1;
+}
+
+.next-button:hover {
+
+    padding-right: 30px;
+    background-color: #6dd4f0;
+
+
+
+}
+
+.prev-button:hover {
+
+    padding-left: 30px;
+    background-color: #83d7ee;
+}
+
+.prev-arrow,
+.next-arrow {
+
+    font-size: 32px;
+    font-weight: bold;
+    color: #4390ac;
+    font-family: Arial, sans-serif;
+
+}
+
+.prev-button:hover,
+.next-button:hover,
+.prev-arrow:hover,
+.next-arrow:hover {
+    font-stretch: expanded;
+    font-weight: bolder;
+    color: #080d55;
+    font-family: Arial, sans-serif;
+}
+
+.options {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    gap: 2%;
+    grid-row: 1/2;
+    grid-template-columns: 1.5fr 2fr 2.456fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-list {
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.options> :nth-child(1):hover {
+
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px 5px rgba(42, 130, 196, 0.689);
+}
+
+
+
+.options> :nth-child(3):hover {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 10px 5px rgba(42, 130, 196, 0.689);
+}
+
+
+.delete-option {
+
+
+    width: 100%;
+    height: 100%;
+    grid-row: 1/2;
+    grid-column: 2/3;
+    display: grid;
+    gap: 2%;
+    grid-template-columns: 1fr 3fr;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.download-option {
+
+    display: grid;
+    grid-row: 1/2;
+    grid-column: 3/4;
+    width: 100%;
+    height: 100%;
+    gap: 1%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.file-name {
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+
+
+}
+
+#filename {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 17px;
+    color: rgb(227, 229, 230);
+    height: 100%;
+    width: 100%;
+    padding: 11px 50px;
+    font-style: oblique;
+    align-self: center;
+    justify-self: center;
+}
+
+#filename:focus {
+    box-shadow: 0 0 10px 5px rgba(42, 130, 196, 0.689);
+}
+
+.user-drop-tables {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+}
+
+
+#lyteMultiDropButton0 {
+
+    padding: 10px 60px;
+}
+
+.lyteDropPlaceholderMultiple {
+
+
+    font-size: 18px;
+    padding: 10px 60px;
+    color: rgba(140, 242, 255, 0.775);
+    font-style: oblique;
+
+}
+
+
+.dropbutton {
+
+    display: flex;
+    justify-self: center;
+    font-family: "Arimo", serif;
+    background-color: #965506;
+    padding: 10px 30px;
+    border-radius: 100px;
+    font-size: 18px;
+    color: white;
+    border: none;
+
+
+}
+
+.dropbutton:hover {
+
+    font-weight: 1000;
+    font-family: "Arimo", serif;
+    color: rgb(74, 69, 69);
+    padding: 13px 33px;
+    border-radius: 100px;
+    background-color: #efad61;
+    border: none;
+    box-shadow: -5px 5px 10px rgb(0, 0, 0);
+
+}
+
+
+.lyteDropdownLabel {
+
+    padding: 4px 10px;
+    font-size: 1.2rem;
+    color: rgb(4, 226, 255);
+    font-style: oblique;
+
+
+
+
+}
+
+
+lyte-input textarea {
+
+    color: rgb(0, 0, 0);
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-left: 5px;
+    min-width: 18vw;
+    min-height: 78.5vh;
+    max-height: 78.5vh;
+    max-width: 50vw;
+    resize: horizontal;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    /* Allow resizing only horizontally */
+
+}
+
+lyte-input textarea:focus {
+
+    color: rgb(0, 0, 0);
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.5);
+    min-width: 18vw;
+    min-height: 78.5vh;
+    max-height: 78.5vh;
+    max-width: 50vw;
+    resize: horizontal;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+
+
+lyte-table {
+
+    font-weight: bold;
+    color: white;
+
+}
+
+
+lyte-th {
+
+    background: rgb(4, 111, 234);
+
+}
+
+lyte-tbody {
+
+    background: rgba(164, 26, 26, 0);
+
+}
+
+
+lyte-table-structure {
+
+
+    background: rgba(23, 215, 236, 0);
+
+
+}
+
+
+lyte-td {
+
+    background: rgba(6, 109, 227, 0.6);
+    color: white;
+
+}
+
+
+lyte-tbody:hover {
+
+    background: rgb(45, 198, 225);
+
+}

@@ -1,0 +1,24 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-alert-popup-bg: var(--lyte-theme-body-bg);
+  --lyte-alert-popup-border-color: #f7f7f7;
+  --lyte-alert-popup-boxshadow-color: rgba(0, 0, 0, 0.35);
+  --lyte-alert-popup-header-color: var(--lyte-heading-text-color);
+  --lyte-alert-popup-content-color: var(--lyte-common-text-color);
+  --lyte-alert-popup-zindex: var(--lyte-level4-zindex);
+  --lyte-alert-header-font-size: var(--lyte-font-size-xl);
+  --lyte-alert-primarymsg-font-size: var(--lyte-font-size-medium);
+  --lyte-alert-secondarymsg-font-size: var(--lyte-font-size-medium);
+  --lyte-alert-freeze-bg: #000;
+  --lyte-alert-success-icon-position: -91px -154px;
+  --lyte-alert-error-icon-position: -131px -154px;
+  --lyte-alert-warning-icon-position: -210px -154px;
+  --lyte-alert-info-icon-position: -170px -154px;
+  --lyte-alert-confirm-icon-position: -250px -154px;
+}

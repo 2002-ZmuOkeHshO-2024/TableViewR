@@ -1,0 +1,152 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* rtl files loading */
+/* Loading custom themes */
+/* Make changes to override predefined styles */
+/* Breadcrumb styles BEGINS */
+lyte-breadcrumb,
+.lyte-breadcrumb-structure {
+  display: inline-block;
+}
+lyte-breadcrumb-body {
+  font-family: var(--lyte-primary-font);
+  font-size: var(--lyte-breadcrumb-body-font-size);
+  color: var(--lyte-breadcrumb-text-color);
+  cursor: pointer;
+}
+lyte-breadcrumb-body:hover {
+  color: var(--lyte-breadcrumb-hover-text-color);
+}
+.lyteActive lyte-breadcrumb-body {
+  color: var(--lyte-breadcrumb-active-text-color);
+}
+lyte-breadcrumb-item {
+  padding: 0;
+  font-size: var(--lyte-breadcrumb-item-font-size);
+  margin-right: 25px;
+  display: inline-block;
+  position: relative;
+}
+lyte-breadcrumb-item::after {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -42px -1px;
+  width: 6px;
+  height: 9px;
+  position: absolute;
+  right: -18px;
+  top: calc(50% - 9px/2);
+  opacity: 0.5;
+}
+lyte-breadcrumb-item:last-child {
+  margin-right: 0;
+}
+lyte-breadcrumb-item:last-child::after {
+  content: none;
+}
+.lyteBreadcrumbCollapseSection > lyte-yield {
+  display: flex;
+}
+.lyteBreadcrumbCollapsibleContainer lyte-breadcrumb-structure {
+  display: flex;
+  align-items: center;
+}
+.lyteBreadcrumbCollapsibleContainer lyte-breadcrumb-item {
+  margin-right: 40px;
+}
+.lyteBreadcrumbFirst lyte-breadcrumb-item:last-of-type {
+  margin-right: 38px;
+}
+.lyteBreadcrumbLast lyte-breadcrumb-item:last-of-type {
+  margin-right: 0;
+}
+.lyteBreadcrumbCollapsibleContainer lyte-breadcrumb-item::after {
+  right: -23px;
+}
+.lyteBreadcrumbShrinkButton {
+  border: 1px solid transparent;
+  padding: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lyteBreadcrumbCollapsibleContainer .lyteBreadcrumbShrinkButton:hover,
+.lyteBreadcrumbCollapsibleContainer .lyteDummyEventContainer:focus .lyteBreadcrumbShrinkButton:hover,
+.lyteBreadcrumbCollapsibleContainer .lyteDummyEventContainer:focus .lyteBreadcrumbShrinkButton {
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+.lyteBreadcrumbCollapsibleContainer lyte-drop-button.lyteDropButtonUp,
+.lyteBreadcrumbCollapsibleContainer lyte-drop-button.lyteDropButtonDown,
+.lyteBreadcrumbCollapsibleContainer .lyteDummyEventContainer:focus lyte-drop-button.lyteBreadcrumbShrinkButton.lyteDropButtonDown,
+.lyteBreadcrumbCollapsibleContainer .lyteDummyEventContainer:focus lyte-drop-button.lyteBreadcrumbShrinkButton.lyteDropButtonUp {
+  border: 1px solid transparent;
+  box-shadow: none;
+  background: #DDE1E4;
+  border-radius: 3px;
+}
+.lyteBreadcrumbCollapsibleContainer .lyteDummyEventContainer:focus-visible .lyteBreadcrumbShrinkButton {
+  border: 1px solid #0984E3;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 1px #0984E333;
+}
+.lyteBreadcrumbCollapseIcon {
+  -webkit-mask-image: var(--lyte-sprite-image);
+  -webkit-mask-position: -295px -165px;
+  mask-image: var(--lyte-sprite-image);
+  mask-position: -295px -165px;
+  display: inline-block;
+  width: 16px;
+  height: 4px;
+  background-color: #7B7C7D;
+}
+.lyteBreadcrumbFirst lyte-breadcrumb-item:last-child::after {
+  content: '';
+}
+.lyteBreadcrumbCollapseShowElem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-right: 35px;
+}
+.lyteBreadcrumbCollapseShowElem::after {
+  content: '';
+  background-image: var(--lyte-sprite-image);
+  background-position: -42px 0px;
+  width: 6px;
+  height: 11px;
+  opacity: 0.5;
+  position: absolute;
+  right: 17px;
+}
+.lyteBreadcrumbCollapsibleContainer lyte-drop-button.lyteDropButtonUp .lyteBreadcrumbCollapseIcon,
+.lyteBreadcrumbCollapsibleContainer lyte-drop-button.lyteDropButtonDown .lyteBreadcrumbCollapseIcon,
+.lyteBreadcrumbCollapseShowElem:hover .lyteBreadcrumbCollapseIcon {
+  background-color: #5B5D5F;
+}
+.lyteBreadcrumbDropdown.lyteDropdownUp .lyteArrow,
+.lyteBreadcrumbDropdown.lyteDropdownDown .lyteArrow {
+  display: none;
+}
+.lyteBreadcrumbDropdown.lyteDropdownDown {
+  transform: translateY(5px);
+}
+.lyteBreadcrumbDropdown.lyteDropdownUp {
+  transform: translateY(-5px);
+}
+/* import theme overrides - styles */
+/* import custom css - final tweaks by the user */
+/* Make preferred css changes over here.
+ * This will be added to the end of the styles/breadcrumb.less file
+ */
+/* Breadcrumb styles ENDS */
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */

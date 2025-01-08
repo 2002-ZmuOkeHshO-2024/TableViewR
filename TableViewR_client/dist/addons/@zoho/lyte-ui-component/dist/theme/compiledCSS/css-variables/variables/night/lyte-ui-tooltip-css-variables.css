@@ -1,0 +1,16 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-tooltip-bg: #fff;
+  --lyte-tooltip-text-color: #333;
+  --lyte-tooltip-zindex: var(--lyte-level5-zindex);
+  --lyte-tooltip-alternate-bg: var(--lyte-theme-body-bg);
+  --lyte-tooltip-alternate-border-color: #6f6f6f;
+  --lyte-tooltip-alternate-text-color: var(--lyte-common-text-color2);
+  --lyte-tooltip-font-size: var(--lyte-font-size-small);
+}

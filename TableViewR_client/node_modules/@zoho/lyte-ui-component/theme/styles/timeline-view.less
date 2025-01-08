@@ -1,0 +1,1061 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/timelineview/timeline-view.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+
+@import (optional) "../themes/@{timelineview}/ui-elements/timelineview/timeline-view.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{timelineview}/global/@{direction}.less";
+
+lyte-timeline-view {
+	.lyteTimelineViewMixin();
+	display: block;
+	font-family: @font-family;
+}
+.lyteTimelineViewFixedContainerHeight .lyteTimelineViewTable,
+.lyteTimelineViewFixedContainerHeight .lyteTimelineViewContentElem {
+	.lyteTimelineViewFixedContainerHeightMixin();
+	height: @h;
+}
+.lyteTimelineViewTable {
+	.lyteTimelineViewTableMixin();
+	max-height: @max-height;
+	display: block;
+	box-sizing: border-box;
+	position: relative;
+	//ubuntu paint issue fix
+	// overflow: hidden;
+}
+.lyteTimelineViewContentElem {
+	.lyteTimelineViewContentElemMixin();
+	--lyte-timelineview-groupby-panel-width: 201px;
+	--lyte-timelineview-row-size: @lyte-timelineview-row-size;
+	--lyte-timelineview-column-size: @lyte-timelineview-column-size;
+	--lyte-timelineview-column-gridline-temp: @lyte-timelineview-column-gridline-temp;
+	display: grid;
+	position: relative;
+	grid-auto-columns: var(--lyte-timelineview-column-size);
+	row-gap: @row-gap;
+	max-height: @max-height;
+	grid-auto-rows: var(--lyte-timelineview-row-size);
+	overflow: auto;
+	border-top: @border-top;
+	@{property-border-left}: @border-left;
+}
+.lyteTimelineViewContentElem.lyteTimelineViewQuarterwise {
+	grid-auto-columns: auto;
+}
+.lyteTimelineViewNoScroll.lyteTimelineViewContentElem {
+	overflow-y: hidden;
+}
+.lyteTimelineViewWeekwise {
+	.lyteTimelineViewWeekwiseMixin();
+	--lyte-timelineview-column-size: @lyte-timelineview-column-size;
+	--lyte-timelineview-column-gridline-temp: @lyte-timelineview-column-gridline-temp;
+}
+.lyteTimelineViewMonthwise {
+	.lyteTimelineViewMonthwiseMixin();
+	--lyte-timelineview-column-size: @lyte-timelineview-column-size;
+	--lyte-timelineview-column-gridline-temp: @lyte-timelineview-column-gridline-temp;
+}
+.lyteTimelineViewWithGrouping .lyteTimelineViewContentElem {
+	.lyteTimelineViewWithGroupingMixin();
+	--lyte-timelineview-groupby-column-end: 2;
+	grid-auto-rows: unset;
+	grid-template-rows: @grid-template-rows;
+	row-gap: 0;
+}
+.lyteTimelineViewWithGrouping .lyteTimelineViewContentElem.lyteTimelineViewWeekwise {
+	--lyte-timelineview-groupby-column-end: 6;
+}
+.lyteTimelineViewWithGrouping .lyteTimelineViewContentElem.lyteTimelineViewMonthwise {
+	--lyte-timelineview-groupby-column-end: 11;
+}
+.lyteTimelineYearHeaderElem,
+.lyteTimelineViewHeaderElem,
+.lyteTimelineViewHeaderMonthElem {
+	.lyteTimelineViewHeaderElemCommonMixin();
+	grid-column: var(--lyte-timelineview-col-number);
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: @bg;
+	position: sticky;
+	z-index: @z-index;
+	font-size: @font-size;
+	padding: @padding;
+}
+.lyteTimelineYearHeaderElem span,
+.lyteTimelineViewPeriodLabel {
+	.lyteTimelineViewPeriodLabelMixin();
+	position: sticky;
+	@{property-left}: @left;
+	padding: @padding;
+}
+.lyteTimelineViewTextHighlight {
+	.lyteTimelineViewTextHighlightMixin();
+	font-family: @font-family;
+}
+.lyteTimelineViewHeaderPrimaryLabel {
+	.lyteTimelineViewHeaderPrimaryLabelMixin();
+	// .lyteTimelineViewMonthLabelMixin();
+	font-family: @font-family;
+}
+.lyteTimelineViewWithGrouping .lyteTimelineYearHeaderElem span,
+.lyteTimelineViewWithGrouping .lyteTimelineViewPeriodLabel {
+	.lyteTimelineViewWithGroupingPeriodLabelMixin();
+	@{property-left}: @left;
+}
+
+.lyteTimelineViewHeaderMonthElem {
+	.lyteTimelineViewHeaderMonthElemMixin();
+	grid-row: 1;
+	top: @top;
+	@{property-border-left}: @border-left;
+	font-size: @font-size;
+	margin-bottom: @margin-bottom;
+	cursor: pointer;
+}
+.lyteTimelineViewWithGrouping .lyteTimelineViewHeaderElem,
+.lyteTimelineViewWithGrouping .lyteTimelineViewHeaderMonthElem {
+	grid-column: var(--lyte-timelineview-col-number);
+}
+.lyteTimelineViewWithGrouping .lyteTimelineViewHeaderMonthElem {
+	.lyteTimelineViewWithGroupingHeaderMonthElemMixin();
+	padding: @padding;
+	margin-bottom: @margin-bottom;
+}
+/* 
+.lyteTimelineViewWeekwise .lyteTimelineViewHeaderMonthElem::before {
+	content: "";
+	position: absolute;
+	height: calc(100% - 5px);
+	width: 1px;
+	background: #ddd;
+	left: 0;
+	top: calc(100% + 5px);
+	z-index: 1;
+}
+*/
+.lyteTimelineViewDaywise .lyteTimelineViewPrimaryHeaderElem {
+	.lyteTimelineViewDaywisePrimaryHeaderElemMixin();
+	justify-content: flex-start;
+	@{property-border-left}: @border-left;
+	@{property-border-right}: @border-right;
+}
+.lyteTimelineViewHeaderElem {
+	.lyteTimelineViewHeaderElemMixin();
+	grid-row: 2;
+	top: @top;
+	border-bottom: @border-bottom;
+	justify-content: center;
+}
+.lyteTimelineViewSecondaryHeaderElem {
+	.lyteTimelineViewSecondaryHeaderElemMixin();
+	@{property-border-left}: @border-left;
+}
+.lyteTimelineViewDaywise .lyteTimelineViewSecondaryHeaderElem {
+	.lyteTimelineViewDaywiseSecondaryHeaderElemMixin();
+	@{property-border-right}: @border-right;
+}
+.lyteTimelineViewMonthwise .lyteTimelineViewSecondaryHeaderElem,
+.lyteTimelineViewWeekwise .lyteTimelineViewSecondaryHeaderElem {
+	@{property-border-left}: 0;
+}
+.lyteTimelineViewSecondaryHeaderElem::after {
+	.lyteTimelineViewSecondaryHeaderElemAfterMixin();
+	content: '';
+	position: absolute;
+	@{property-left}: @left;
+	width: @w;
+	height: @h;
+	background: @bg;
+	display: block;
+	bottom: @bottom;
+}
+.lyteTimelineViewDaywise .lyteTimelineViewSecondaryHeaderElem::after,
+.lyteTimelineViewQuarterwise .lyteTimelineViewSecondaryHeaderElem::after {
+	content: none;
+}
+.lyteTimelineViewEndOfSection + .lyteTimelineViewSecondaryHeaderElem {
+	.lyteTimelineViewSecondaryHeaderElemNextToSectionEndMixin();
+	@{property-border-left}: @border-left;
+}
+.lyteTimelineViewEndOfSection + .lyteTimelineViewSecondaryHeaderElem::after {
+	content: none;
+}
+.lyteTimelineViewDaywise .lyteTimelineViewHeaderElem {
+	cursor: pointer;
+}
+.lyteTimelineViewDaywise .lyteTimelineViewHeaderMonthElem {
+	cursor: default;
+}
+.lyteTimelineViewWithGrouping .lyteTimelineViewHeaderElem {
+	.lyteTimelineViewWithGroupingHeaderElemMixin();
+	top: @top;
+}
+/*
+.timelineColumnLine {
+	grid-column-start: var(--lyte-timelineview-col-number);
+	width: 1px;
+	background-color: #ddd;
+	grid-row: 2 / var(--lyte-timelineview-row-end);
+}
+.timelineColumnLine.timelineColumnSeparate {
+	z-index: 10;
+}
+*/
+.lyteTimelineViewOverlayDiv,
+.lyteTimelineViewHeaderRowWrap,
+.lyteTimelineViewHeaderRow,
+.timelineColumnLinesContainer,
+.lyteTimelineViewArrowContainer,
+.lyteTimelineViewEventsContainer {
+	display: contents;
+}
+.lyteTimelineViewEventDiv {
+	.lyteTimelineViewEventDivMixin();
+	grid-row: var(--lyte-timelineview-row-number);
+	grid-column-start: var(--lyte-timelineview-column-start);
+	grid-column-end: var(--lyte-timelineview-column-end);
+	border-radius: @border-radius;
+	position: relative;
+	display: flex;
+	z-index: @z-index;
+}
+.lyteTimelineViewWithGrouping .lyteTimelineViewEventDiv {
+	grid-column-start: calc(var(--lyte-timelineview-column-start));
+	grid-column-end: calc(var(--lyte-timelineview-column-end));
+}
+
+.lyteTimelineViewGroupbyContainer {
+	.lyteTimelineViewGroupbyContainerMixin();
+	grid-row: 3;
+	grid-column: 1 / var(--lyte-timelineview-col-number);
+	display: grid;
+	align-items: flex-start;
+	gap: @gap;
+	align-self: flex-start;
+}
+.lyteTimelineViewGroupbyAccordion {
+	display: grid;
+}
+.lyteTimelineViewGroupbyAccordionBody {
+	.lyteTimelineViewGroupbyAccordionBodyMixin();
+	display: grid;
+	grid-auto-columns: var(--lyte-timelineview-column-size);
+	row-gap: @row-gap;
+	grid-auto-rows: var(--lyte-timelineview-row-size);
+	transition: height 0.3s ease, margin 0.3s ease;
+	margin: @margin;
+}
+.lyteTimelineViewHasMoreEvent .lyteTimelineViewGroupbyAccordionBody {
+	margin-bottom: 0;
+}
+.lyteTimelineViewQuarterwise .lyteTimelineViewGroupbyAccordionBody {
+	grid-auto-columns: auto;
+}
+.lyteTimelineViewHideAccordion .lyteTimelineViewGroupbyAccordionBody {
+	.lyteTimelineViewHideAccordionMixin();
+	contain: paint;
+	height: @h;
+	margin: @margin;
+	z-index: 2;
+}
+
+.lyteTimelineViewGroupbyElementHeaderWrap {
+	grid-column: 1 / var(--lyte-timelineview-col-number);
+	grid-row: 1 / 4;
+}
+.lyteTimelineViewGroupbyElementHeader {
+	.lyteTimelineViewGroupbyElementHeaderMixin();
+	position: sticky;
+	@{property-left}: @left;
+	top: @top;
+	z-index: @z-index;
+	background: @bg;
+	padding: @padding;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	@{property-border-right}: @border-right;
+	border-bottom: @border-bottom;
+	@{property-margin-right}: @margin-right;
+	width: @w;
+	height: @h;
+	box-sizing: border-box;
+}
+.lyteTimelineViewGroupbyElement {
+	display: contents;
+}
+.lyteTimelineViewGroupbyElementFillBg,
+.lyteTimelineViewGroupbyElementLabelWrap {
+	.lyteTimelineViewGroupbyElementFillBgAndLabelWrapMixin();
+	grid-row: 1;
+	grid-column: 1;
+	background: @bg;
+	position: sticky;
+	top: @top;
+	cursor: pointer;
+}
+.lyteTimelineViewGroupbyElementFillBg {
+	.lyteTimelineViewGroupbyElementFillBgMixin();
+	z-index: @z-index;
+	width: @w;
+}
+.lyteTimelineViewGroupbyElementLabelWrap {
+	.lyteTimelineViewGroupbyElementLabelWrapMixin();
+	@{property-left}: @left;
+	z-index: @z-index;
+	display: inline-flex;
+	align-items: center;
+	width: @w;
+	padding: @padding;
+	box-sizing: border-box;
+	@{property-border-right}: @border-right;
+}
+.lyteTimelineViewGroupbyElementLabelWrap::before {
+	.lyteTimelineViewGroupbyElementLabelWrapBeforeMixin();
+	content: '';
+	height: @h;
+	width: @w;
+	position: absolute;
+	display: block;
+	top: @top;
+	@{property-left}: @left;
+	@{property-border-right}: @border-right;
+	background: @bg;
+}
+.lyteTimelineViewLastAccordion .lyteTimelineViewGroupbyElementLabelWrap::before {
+	content: none;
+}
+
+.lyteTimelineViewGroupbyAccordionArrow {
+	.lyteTimelineViewGroupbyAccordionArrowMixin();
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+	@{property-margin-left}: @margin-left;
+	transform: @transform;
+	transition: transform 0.3s ease;
+	flex-shrink: 0;
+}
+.lyteTimelineViewHideAccordion .lyteTimelineViewGroupbyAccordionArrow {
+	.lyteTimelineViewHideAccordionGroupbyAccordionArrowMixin();
+	transform: @transform;
+}
+.lyteTimelineViewGroupbySubgroup {
+	.lyteTimelineViewGroupbySubgroupMixin();
+	position: sticky;
+	@{property-left}: @left;
+	z-index: @z-index;
+	grid-row: 1 / span var(--lyte-timelineview-row-end);
+	grid-column: 1 / 3;
+	width: @w;
+	background-color: @background-color;
+	@{property-border-right}: @border-right;
+	@{property-margin-right}: @margin-right;
+	margin-top: @margin-top;
+	margin-bottom: @margin-bottom;
+}
+.lyteTimelineViewHasMoreEvent .lyteTimelineViewGroupbySubgroup {
+	grid-row: 1 / calc(var(--lyte-timelineview-row-end) + 1);
+}
+.lyteTimelineViewLastAccordion .lyteTimelineViewGroupbySubgroup {
+	.lyteTimelineViewLastAccordionGroupbySubgroupMixin();
+	margin-bottom: @margin-bottom;
+}
+.lyteTimeLineViewGroupbyDummyPanel {
+	.lyteTimeLineViewGroupbyDummyPanelMixin();
+	height: @h;
+	width: @w;
+	background: @bg;
+	position: sticky;
+	z-index: @z-index;
+	@{property-left}: @left;
+	@{property-border-right}: @border-right;
+	box-sizing: border-box;
+}
+.lyteTimelineViewLastAccordion.lyteTimelineViewGroupbyAccordion .lyteTimelineViewOverlay {
+	.lyteTimelineViewLastAccordionGroupbyOverlayMixin();
+	margin-bottom: @margin-bottom;
+	background-color: @bg-color;
+}
+.lyteTimelineViewBg {
+	.lyteTimelineViewBgMixin();
+	background-image: @bg-img;
+	pointer-events: none;
+	grid-column: 1 / span var(--lyte-timelineview-col-number);
+	grid-row: 3 / span var(--lyte-timelineview-row-end);
+	margin-top: @margin-top;
+	position: relative;
+}
+.lyteTimelineViewWithGrouping .lyteTimelineViewBg {
+	.lyteTimelineViewWithGroupingTimelineViewBgMixin();
+	grid-row: 3 / 4;
+	grid-column: var(--lyte-timelineview-groupby-column-end) / var(--lyte-timelineview-col-number);
+	margin-bottom: @margin-bottom;
+}
+.lyteTimelineViewHasMoreEvent .lyteTimelineViewBg {
+	grid-row: 1 / calc(var(--lyte-timelineview-row-end) + 1);
+}
+// .quartersTimeline .lyteTimelineViewHeaderMonthElem {
+// 	grid-row: 2;
+// }
+// .quartersTimeline .lyteTimelineViewHeaderElem {
+// 	grid-row : 3;
+// }
+// .lyteTimelineViewHeaderElem.quarterHeader {
+// 	grid-row: 1;
+// }
+
+.lyteTimelineViewEvent {
+	.lyteTimelineViewEventMixin();
+	--lyte-timelineview-eventbg: @lyte-timelineview-eventbg;
+	--lyte-timelineview-resize-color: @lyte-timelineview-resize-color;
+	--lyte-timelineview-event-text-color: @lyte-timelineview-event-text-color;
+	color: @color;
+	height: @h;
+	width: @w;
+	position: absolute;
+	top: @top;
+	left: @left;
+	border-radius: @border-radius;
+	display: flex;
+	align-items: center;
+	background-color: @background-color;
+}
+
+.lyteTimelineViewEvent lyte-yield[yield-name="timeline-event"] {
+	.lyteTimelineViewEventLyteYieldElementMixin();
+	position: sticky;
+	padding: @padding;
+	@{property-left}: @left;
+	display: inline-block;
+	max-width: 100%;
+	// box-sizing: border-box;
+	white-space: nowrap;
+}
+.lyteTimelineViewEvent lyte-yield.lyteTimelineViewEventAbsoluteText {
+	.lyteTimelineViewEventLyteYieldElementAbsoluteTextMixin();
+	@{property-left}: @left;
+	position: absolute;
+	cursor: text;
+	color: @color;
+}
+.lyteTimelineViewAbsoluteEvent.lyteTimelineViewEvent lyte-yield,
+.lyteTimelineViewAbsoluteEvent .lyteTimelineViewEvent lyte-yield {
+	.lyteTimelineViewAbsoluteEventLyteYieldElementTextMixin();
+	color: @color;
+}
+.lyteTimelineViewEvent.LyteTimelineViewGroupBy lyte-yield {
+	.lyteTimelineViewEventGroupbyLyteYieldElementMixin();
+	@{property-left}: @left;
+}
+.lyteTimelineViewEvent.LyteTimelineViewGroupBy lyte-yield.lyteTimelineViewEventAbsoluteText {
+	@{property-left}: 100%;
+}
+
+.lyteTimelineViewArrow {
+	display: flex;
+	grid-row: 3;
+	grid-column: 1/var(--lyte-timelineview-col-number);
+	align-items: center;
+}
+.lyteTimelineViewArrowBox {
+	.lyteTimelineViewArrowBoxMixin();
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	background: @bg;
+	margin-right: @margin-right;
+	flex-shrink: 0;
+	position: sticky;
+	z-index: @z-index;
+	cursor: pointer;
+}
+.lyteTimelineViewArrowBox:hover {
+	.lyteTimelineViewArrowBoxHoverMixin();
+	background: @bg;
+}
+.lyteTimelineViewArrowBox::before {
+	.lyteTimelineViewArrowBoxBeforeMixin();
+	content: '';
+	background-image: @bg-img;
+	background-position: @bg-pos;
+	width: @w;
+	height: @h;
+}
+& when (@direction = ltr) {
+	.lyteTimelineViewLeftArrow.lyteTimelineViewHideArrow ~ .lyteTimelineViewArrowSeparator {
+		margin-left: auto;
+	}
+}
+& when (@direction = rtl) {
+	.lyteTimelineViewRightArrow.lyteTimelineViewHideArrow ~ .lyteTimelineViewArrowSeparator {
+		margin-left: auto;
+	}
+}
+.lyteTimelineViewLeftArrow {
+	& when (@direction = ltr) {
+		left: 10px;
+	}
+	& when (@direction = rtl) {
+		right: calc(100% - 30px);
+	}
+}
+& when (@direction = ltr) {
+	.lyteTimelineViewWithGrouping .lyteTimelineViewLeftArrow {
+		left: calc( var(--lyte-timelineview-groupby-panel-width) + 10px);
+	}
+}
+& when (@direction = rtl) {
+	.lyteTimelineViewWithGrouping .lyteTimelineViewRightArrow {
+		right: calc( var(--lyte-timelineview-groupby-panel-width) + 10px);
+	}
+}
+.lyteTimelineViewLeftArrow ~ .lyteTimelineViewArrowText {
+	@{property-left}: 40px;
+}
+& when (@direction = ltr) {
+	.lyteTimelineViewLeftArrow.lyteTimelineViewHideArrow ~ .lyteTimelineViewArrowText {
+		left: unset;
+		right: 40px;
+	}
+}
+& when (@direction = rtl) {
+	.lyteTimelineViewRightArrow.lyteTimelineViewHideArrow ~ .lyteTimelineViewArrowText {
+		right: unset;
+		left: 40px;
+	}
+}
+& when (@direction = ltr) {
+	.lyteTimelineViewWithGrouping .lyteTimelineViewRightArrow.lyteTimelineViewHideArrow ~ .lyteTimelineViewArrowText {
+		left: calc( var(--lyte-timelineview-groupby-panel-width) + 40px);
+	}
+}
+& when (@direction = rtl) {
+	.lyteTimelineViewWithGrouping .lyteTimelineViewLeftArrow.lyteTimelineViewHideArrow ~ .lyteTimelineViewArrowText {
+		right: calc( var(--lyte-timelineview-groupby-panel-width) + 40px);
+	}
+}
+.lyteTimelineViewRightArrow {
+	& when (@direction = ltr) {
+		left: calc(100% - 20px);
+	}
+	& when (@direction = rtl) {
+		right: 10px;
+	}
+}
+.lyteTimelineViewArrow .lyteTimelineViewLeftArrow.lyteTimelineViewArrowBox::before {
+	.lyteTimelineViewArrowLeftArrowBoxBeforeMixin();
+	transform: @transform;
+}
+.lyteTimelineViewRightArrow + .lyteTimelineViewArrowText,
+.lyteTimelineViewEventArrow .lyteTimelineViewRightArrow.lyteTimelineViewArrowBox {
+	.lyteTimelineViewEventArrowRightArrowBoxMixin();
+	transform: @transform;
+}
+.lyteTimelineViewArrowText {
+	.lyteTimelineViewArrowTextMixin();
+	position: sticky;
+	max-width: @max-w;
+	z-index: @z-index;
+}
+.lyteTimelineViewArrowText.lyteTimelineViewArrowTextHide,
+.lyteTimelineViewHideArrow {
+	display: none;
+}
+
+.LyteTimelineViewGroupBy.event .lyteTimelineViewDue,
+.lyteTimelineViewDue {
+	.lyteTimelineViewDueMixin();
+	position: absolute;
+	@{property-left}: @left;
+	width: @w;
+	z-index: @z-index;
+	display: flex;
+	background-color: @background-color;
+	justify-content: flex-end;
+	top: @top;
+	bottom: @bottom;
+	border-radius: @border-radius;
+	align-items: center;
+	padding: @padding;
+	box-sizing: border-box;
+}
+.lyteTimelineViewDue::after {
+	.lyteTimelineViewDueAfterMixin();
+	content: '';
+	position: absolute;
+	top: @top;
+	left: @left;
+	right: @right;
+	bottom: @bottom;
+	background: @bg;
+	mix-blend-mode: soft-light;
+	border-radius: @border-radius;
+	z-index: @z-index;
+}
+.lyteTimelineViewDue > span {
+	.ManualName_19_lyteTimelineViewDueMixin();
+	padding: @padding;
+	display: block;
+	background: @bg;
+	font-size: @font-size;
+	color: @color;
+	border-radius: @border-radius;
+
+}
+.lyteTimelineViewLoadMore {
+	.lyteTimelineViewLoadMoreMixin();
+	grid-row: var(--lyte-timelineview-row-end);
+	position: relative;
+	background: @bg;
+	border: @border;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	z-index: @z-index;
+}
+.lyteTimelineViewLoadMore:hover {
+	.lyteTimelineViewLoadMoreHoverMixin();
+	background: @bg;
+	border: @border;
+}
+.lyteTimelineViewLoadMoreLabel {
+	.lyteTimelineViewLoadMoreLabelMixin();
+	position: sticky;
+	@{property-left}: @left;
+	transform: @transform;
+	display: inline-block;
+	color: @color;
+	font-size: @font-size;
+}
+.lyteTimelineViewHideLoadmore {
+	display: none;
+}
+.lyteTimeLineViewNoEnd.draggable-handle-element,
+.lyteTimeLineViewNoEnd .lyteTimelineViewEvent {
+	.lyteTimeLineViewNoEndEventMixin();
+	border-radius: @border-radius;
+}
+.lyteTimeLineViewNoEnd .lyteTimeLineViewNoEndElem {
+	.lyteTimeLineViewNoEndElemMixin();
+	position: absolute;
+	width: @w;
+	height: @h;
+	top: @top;
+	@{property-left}: @left;
+	transform: @transform;
+	background: linear-gradient(to @value-position-right, 
+					var(--lyte-timelineview-eventbg) 0px, var(--lyte-timelineview-eventbg) 4px, 
+					transparent 4px, transparent 6px, 
+					var(--lyte-timelineview-eventbg) 6px, var(--lyte-timelineview-eventbg) 19px, 
+					transparent 19px, transparent 21px, 
+					var(--lyte-timelineview-eventbg) 21px, var(--lyte-timelineview-eventbg) 34px, 
+					transparent 34px, transparent 37px, 
+					var(--lyte-timelineview-eventbg) 37px, var(--lyte-timelineview-eventbg) 46px, 
+					transparent 46px, transparent 50px, 
+					var(--lyte-timelineview-eventbg) 50px, var(--lyte-timelineview-eventbg) 57px, 
+					transparent 57px, transparent 63px, 
+					var(--lyte-timelineview-eventbg) 63px, var(--lyte-timelineview-eventbg) 68px, 
+					transparent 68px, transparent 76px, 
+					var(--lyte-timelineview-eventbg) 76px, var(--lyte-timelineview-eventbg) 79px, 
+					transparent 79px, transparent 87px, 
+					var(--lyte-timelineview-eventbg) 87px, var(--lyte-timelineview-eventbg) 89px, 
+					transparent 89px, transparent 99px, 
+					var(--lyte-timelineview-eventbg) 99px, var(--lyte-timelineview-eventbg) 100px
+				);
+}
+.lyteTimeLineViewNoEnd .lyteTimeLineViewNoEndElem::before {
+	.lyteTimeLineViewNoEndElemBeforeMixin();
+	content: '';
+	width: @w;
+	height: @h;
+	background: @bg;
+	position: absolute;
+	@{property-left}: @left;
+}
+
+
+.lyteTimelineViewEventResizeHandler {
+	.lyteTimelineViewEventResizeHandlerMixin();
+	position: absolute;
+	width: @w;
+	cursor: ew-resize;
+	z-index: @z-index;
+	top: @top;
+	bottom: @bottom;
+	visibility: hidden;
+	display: flex;
+	justify-content: space-between;
+	padding: @padding;
+	box-sizing: border-box;
+}
+.lyteTimelineViewLeft {
+	.lyteTimelineViewLeftMixin();
+	@{property-left}: @left;
+	border-radius: @border-radius;
+}
+.lyteTimelineViewRight {
+	.lyteTimelineViewRightMixin();
+	@{property-right}: @right;
+	border-radius: @border-radius;
+}
+.lyteTimelineViewResizeHandlerPosInCenter .lyteTimelineViewEventResizeHandler {
+	.lyteTimelineViewResizeHandlerPosInCenterHandlerMixin();
+	@{property-right}: unset;
+	@{property-left}: @left;
+	transform: @transform;
+}
+.lyteTimelineViewShowResizeHandles .lyteTimelineViewEventResizeHandler {
+	visibility: visible;
+}
+.lyteTimelineViewEvent.lyteTimelineViewEventDrag:hover .lyteTimelineViewEventResizeHandler {
+	visibility: hidden;
+}
+.lyteTimelineViewEventResizeHandler::before,
+.lyteTimelineViewEventResizeHandler::after {
+	.lyteTimelineViewEventResizeHandlerInnerLinesMixin();
+	content: '';
+	width: @w;
+	margin: @margin;
+	background-color: @bg-color;
+	border-radius: @border-radius;
+}
+.lyteTimelineViewOnResize {
+	.lyteTimelineViewOnResizeMixin();
+	outline-offset: @outline-offset;
+	outline: @outline;
+}
+.lyteTimelineViewToday {
+	.lyteTimelineViewTodayMixin();
+	grid-column-start: var(--lyte-timelineview-today-column-start);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: sticky;
+	top: @top;
+	padding-top: @padding-top;
+	box-sizing: border-box;
+	grid-row: 1;
+	z-index: @z-index;
+	pointer-events: none;
+}
+.lyteTimelineViewToday.lyteTimelineViewTodayNotInView {
+	align-items: flex-start;
+}
+.lyteTimelineViewTodayLineDiv {
+	flex-grow: 1;
+	display: flex;
+}
+.lyteTimelineViewTodayLine {
+	.lyteTimelineViewTodayLineMixin();
+	width: @w;
+	background: @bg;
+}
+.lyteTimelineViewTodayText {
+	.lyteTimelineViewTodayTextMixin();
+	background: @bg;
+	color: @color;
+	font-size: @font-size;
+	padding: @padding;
+	border-radius: @border-radius;
+	position: relative;
+	pointer-events: auto;
+	white-space: nowrap;
+}
+.lyteTimelineViewTodayNotInView .lyteTimelineViewTodayText {
+	.lyteTimelineViewTodayNotInViewTodayTextMixin();
+	padding: @padding;
+	transform: @transform;
+}
+.lyteTimelineViewQuarterwise .lyteTimelineViewTodayText {
+	.lyteTimelineViewQuarterwiseTodayTextMixin();
+	position: absolute;
+	transform: @transform;
+}
+.lyteTimelineViewQuarterwise .lyteTimelineViewTodayLineDiv {
+	.lyteTimelineViewQuarterwiseTodayLineDivMixin();
+	position: absolute;
+	height: @h;
+	top: @top;
+	z-index: -1;
+}
+.lyteTimelineViewTodayText::after {
+	.lyteTimelineViewTodayTextAfterMixin();
+	content: ' ';
+	position: absolute;
+	left: @left;
+	top: @top;
+	height: @h;
+	width: @w;
+	background: @bg;
+	transform: @transform;
+}
+.lyteTimelineViewGroupbyCount {
+	.lyteTimelineViewGroupbyCountMixin();
+	flex-shrink: 0;
+	margin: @margin;
+}
+.lyteTimelineViewGroupbyCount .lyteBadge {
+	.lyteTimelineViewGroupbyCountBadgeMixin();
+	min-width: @min-w;
+	min-height: @min-height;
+	padding: @padding;
+	box-sizing: border-box;
+	background: @bg;
+	border: @border;
+	border-radius: @border-radius;
+	position: static;
+	transform: @transform;
+}
+.lyteTimelineViewGroupbyCount .lyteBadgeContent {
+	.lyteTimelineViewGroupbyCountBadgeContentMixin();
+	font-size: @font-size;
+	color: @color;
+}
+
+.lyteTimelineViewQuarterwise .lyteTimelineYearHeaderElem {
+	.lyteTimelineViewQuarterwiseYearHeaderElemMixin();
+	grid-column-end: span 12;
+	grid-row: 1;
+	top: @top;
+	padding: @padding;
+	align-items: flex-end;
+	justify-content: flex-start;
+	@{property-padding-left}: @padding-left;
+}
+.lyteTimelineViewQuarterwise .lyteTimelineYearHeaderElem > div {
+	.ManualName_25_lyteTimelineViewQuarterwiseMixin();
+	position: sticky;
+	@{property-left}: @left;
+}
+// .lyteTimelineViewQuarterwise .lyteTimelineViewHeaderMonthElem {
+// 	.lyteTimelineViewQuarterwiseHeaderMonthElemMixin();
+// 	grid-row: 2;
+// 	top: @top;
+// 	margin-top: @margin-top;
+// 	padding: @padding;
+// 	align-items: flex-start;
+// 	margin-bottom: @margin-bottom;
+// }
+// .lyteTimelineViewWithGrouping .lyteTimelineViewQuarterwise .lyteTimelineViewHeaderMonthElem {
+// 	.lyteTimelineViewWithGroupingQuarterwiseHeaderMonthElemMixin();
+// 	margin-top: @margin-top;
+// }
+.lyteTimelineViewQuarterwise .lyteTimelineViewHeaderElem {
+	.lyteTimelineViewQuarterwiseHeaderElemMixin();
+	width: calc( var(--lyte-timelineview-lineCount) * var(--lyte-timelineview-column-size));
+	box-sizing: border-box;
+	// grid-row: 2;
+	// margin-top: @margin-top;
+	padding: @padding;
+	// font-size: @font-size;
+	// top: @top;
+}
+// .lyteTimelineViewWithGrouping .lyteTimelineViewQuarterwise .lyteTimelineViewHeaderElem {
+// 	.lyteTimelineViewWithGroupingQuarterwiseHeaderElemMixin();
+// 	top: @top;
+// }
+.lyteTimelineViewQuarterwise .lyteTimelineViewBg {
+	grid-row: 3 / span var(--lyte-timelineview-row-end);
+}
+.lyteTimelineViewQuarterwise .lyteTimelineViewGroupbyAccordion .lyteTimelineViewBg {
+	grid-row-start: 1;
+}
+.lyteTimelineViewQuarterwise .lyteTimelineViewEndOfSection + .lyteTimelineViewSecondaryHeaderElem {
+	.lyteTimelineViewQuarterwiseEndOfSectionNextElemSecondaryHeaderElemMixin();
+	@{property-border-left}: @border-left;
+}
+.lyteTimelineViewHoverCardDiv {
+	.lyteTimelineViewHoverCardDivMixin();
+	position: absolute;
+	width: @w;
+	height: @h;
+	z-index: @z-index;
+	pointer-events: none;
+	border: @border;
+	display: flex;
+	flex-direction: column-reverse;
+	border-radius: @border-radius;
+	box-shadow: @box-shadow;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.lyteTimelineViewHoverCardHide {
+	display: none;
+}
+.lyteTimelineViewHoverCardLoading {
+	.lyteTimelineViewHoverCardLoadingMixin();
+	width: @w;
+	height: @h;
+	background-color: @background-color;
+	align-content: center;
+	justify-content: center;
+}
+.lyteTimelineViewHoverCard {
+	.lyteTimelineViewHoverCardMixin();
+	width: @w;
+	background-color: @background-color;
+}
+.lyteTimelineViewDragSourceElem {
+	.lyteTimelineViewDragSourceElemMixin();
+	opacity: @opacity;
+}
+.lyteTimelineViewDragPlaceholder {
+	.lyteTimelineViewDragPlaceholderMixin();
+	border: @border;
+	z-index: @z-index;
+	display: flex;
+}
+.lyteTimelineViewHeaderElem.lyteTimelineViewHoliday,
+.lyteTimelineViewHeaderElem.lyteTimelineViewWeekEnd {
+	.lyteTimelineViewHeaderElemWeekEndMixin();
+	color: @color;
+}
+.lyteTimelineViewOverlay {
+	.lyteTimelineViewOverlayMixin();
+	grid-column-start: var(--lyte-timelineview-col-number);
+	grid-row: 3 / span var(--lyte-timelineview-row-end);
+	background-color: @background-color;
+	margin-top: @margin-top;
+	border-right: @border-right;
+	border-left: @border-left;
+	@{property-margin-left}: @margin-left;
+	@{property-margin-right}: @margin-right;
+	background-image: @bg-img;
+}
+.lyteTimelineViewDaywise .lyteTimelineViewOverlay {
+	background-image: none;
+}
+.lyteTimelineViewOverlay.lyteTimelineViewEvenSection {
+	background-color: transparent;
+}
+.lyteTimelineViewWithGrouping .lyteTimelineViewOverlay {
+	.lyteTimelineViewWithGroupingOverlayMixin();
+	grid-row: 3 / 4;
+	grid-column-start: var(--lyte-timelineview-col-number);
+	margin-bottom: @margin-bottom;
+}
+.lyteTimelineViewGroupbyAccordionBody .lyteTimelineViewOverlay {
+	visibility: hidden;
+	grid-row: 1;
+}
+.lyteTimelineViewHasMoreEvent .lyteTimelineViewOverlay {
+	grid-row: 1 / calc(var(--lyte-timelineview-row-end) + 1);
+}
+.lyteTimelineViewOverlay.lyteTimelineViewOddQuarter {
+	.lyteTimelineViewOverlayOddQuarterMixin();
+	background-color: @background-color;
+}
+.lyteTimelineViewQuarterwise .lyteTimelineViewOverlay {
+	.lyteTimelineViewQuarterwiseOverlayMixin();
+	display: grid;
+	grid-template-columns: repeat(var(--lyte-timelineview-lineCount), 1fr);
+	width: calc( var(--lyte-timelineview-lineCount) * var(--lyte-timelineview-column-size));
+	box-sizing: border-box;
+	@{property-border-right}: 0;
+	@{property-border-left}: @border-left;
+	margin-left: 0;
+	margin-right: 0;
+	background-image: unset;
+}
+.lyteTimelineQuarterViewLines {
+	.lyteTimelineQuarterViewLinesMixin();
+	grid-column: var(--lyte-timelineView-count);
+	width: @w;
+	background: @bg;
+}
+.lyteTimelineViewQuarterwise .lyteTimelineViewEvenQuarter + .lyteTimelineViewOddQuarter,
+.lyteTimelineViewQuarterwise .lyteTimelineViewOddQuarter + .lyteTimelineViewEvenQuarter {
+	.lyteTimelineViewQuarterwiseOverlayWithSeparatorLinesMixin();
+	@{property-border-left}: @border-left;
+	// background-image: @bg-image;
+}
+.lyteTimelineViewNoResultDiv {
+	.lyteTimelineViewNoResultDivMixin();
+	margin-top: @margin-top;
+	display: flex;
+	align-items: center;
+	grid-row: 3 / span calc(var(--lyte-timelineview-row-end));
+}
+.lyteTimelineViewNoResultLabel {
+	.lyteTimelineViewNoResultLabelMixin();
+	position: sticky;
+	@{property-left}: @left;
+	transform: @transform;
+	color: @color;
+	font-size: @font-size;
+}
+.lyteTimelineViewGroupbyContainer .lyteTimelineViewNoResultLabel {
+	.lyteTimelineViewGroupbyNoResultLabelMixin();
+	@{property-left}: @left;
+}
+.lyteTimelineViewLoading {
+	grid-column: 1 / var(--lyte-timelineview-col-number);
+	grid-row: calc(var(--lyte-timelineview-row-end) + 2);
+}
+.lyteTimelineViewLoadingYield,
+.lyteTimelineViewLoading lyte-loader {
+	.lyteTimelineViewLoaderMixin();
+	position: sticky;
+	@{property-left}: @left;
+	transform: @transform;
+	display: block;
+	width: @w;
+}
+.lyteTimelineViewGroupbyContainer .lyteTimelineViewLoading {
+	grid-row: var(--lyte-timelineview-row-end);
+}
+.lyteTimelineViewGroupbyContainer .lyteTimelineViewLoadingYield,
+.lyteTimelineViewGroupbyContainer .lyteTimelineViewLoading lyte-loader {
+	.lyteTimelineViewGroupbyContainerLoaderMixin();
+	@{property-left}: @left;
+}
+.lyteTimelineViewLoading .ltexitdiv {
+	display: none;
+}
+.lyteTimelineViewLoading .ltspindiv {
+	.lyteTimelineViewLoadingSpindivMixin();
+	height: @h;
+}
+.lyteTimelineViewLoading .ltLoaderSpin {
+	.lyteTimelineViewLoadingLoaderSpinMixin();
+	width: @w;
+	height: @h;
+}
+.lyteTimelineViewNoRecordFound.lyteTimelineViewGroupbyAccordionBody {
+	.lyteTimelineViewNoRecordFoundGroupbyAccordionBodyMixin();
+	margin-top: @margin-top;
+}
+.lyteTimelineViewGroupbyAccordionBody .lyteTimelineViewNoResultDiv {
+	grid-row: 1;
+}
+
+.lyteTimelineViewOnEventResize * {
+	cursor: ew-resize;
+}
+.lyteTimelineViewOnEventResize .draggable-element{
+	cursor: ew-resize;
+}
+.lyteTimelineViewDisableResize.lyteTimelineViewEventResizeHandler {
+	display: none;
+}
+.lyteTimelineViewDisableUserSelect,
+.lyteTimelineViewDisableUserSelect * {
+	-webkit-user-select: none;
+	user-select: none;
+}

@@ -1,0 +1,64 @@
+<template tag-name='column-comp'>
+
+
+
+
+    <span class="index2">{{idx}}</span>
+
+
+
+    <div class="column-name2">
+
+
+
+        <lyte-input class="columnName2" lt-prop-value='{{columnName}}' lt-prop-appearance='box'
+            lt-prop-direction='horizontal' lt-prop-placeholder="Enter column{{idx}} Name ">
+        </lyte-input>
+
+
+
+    </div>
+
+
+    <div class="data-type2">
+
+        <lyte-dropdown class="datatype-value_{{idx}} datatype2" lt-prop-options={{yourOption}} lt-prop-user-value="name"
+            lt-prop-system-value="value" lt-prop-name="{{idx-1}}" lt-prop-selected='{{dataType}}'
+            on-option-selected="{{method('onOptionSelect',idx)}}">
+        </lyte-dropdown>
+
+
+    </div>
+
+
+    <div class="format-string_{{idx}}">
+
+        <lyte-input class="dateformat" lt-prop-value='{{dateFormat}}' lt-prop-direction='horizontal'
+            lt-prop-appearance='box' lt-prop-placeholder="Format used">
+        </lyte-input>
+
+    </div>
+
+
+    <div class="numeric-length_{{idx}}">
+
+
+
+
+        <lyte-number class="length_a_{{idx}} length1" lt-prop-value="{{length1}}"></lyte-number>
+
+
+        <lyte-number class="length_b_{{idx}} length2" lt-prop-value="{{length2}}"
+            before-render="{{method('TestbeforeRender',idx)}}"></lyte-number>
+
+
+
+
+
+    </div>
+
+
+
+
+
+</template>

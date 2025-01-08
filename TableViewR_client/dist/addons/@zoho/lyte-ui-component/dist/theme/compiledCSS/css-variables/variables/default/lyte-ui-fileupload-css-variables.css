@@ -1,0 +1,36 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-fileupload-bg: var(--lyte-theme-body-bg);
+  --lyte-fileupload-msg-text-color: #666;
+  --lyte-fileupload-file-name-text-color: var(--lyte-common-text-color);
+  --lyte-fileupload-list-file-bg: #f7f7f7;
+  --lyte-fileupload-list-file-border-color: #f1f1f1;
+  --lyte-fileupload-list-file-error-bg: #ffeeee;
+  --lyte-fileupload-list-file-error-border-color: #f8dcdc;
+  --lyte-fileupload-retry-color: #555;
+  --lyte-fileupload-message-wrap-border-color: #b8bdbe;
+  --lyte-fileupload-message-wrap-hover-border-color: #969b9c;
+  --lyte-fileupload-file-entered-message-wrap-border-color: #6eb0cb;
+  --lyte-fileupload-file-entered-message-wrap-bg: #fafcff;
+  --lyte-fileupload-thumb-border-color: #aaa;
+  --lyte-fileupload-progressbar-bg: #dfecfb;
+  --lyte-fileupload-progressbar-fill-bg: #4ea2f7;
+  --lyte-fileupload-failure-msg-text-color: #f00;
+  --lyte-fileupload-input-type-message-wrap-border-color: #c7c7c7;
+  --lyte-fileupload-input-type-message-wrap-hover-border-color: #969b9c;
+  --lyte-fileupload-input-type-file-sucess-border-color: #c7c7c7;
+  --lyte-fileupload-boxtype-icon-position: -155px -203px;
+  --lyte-fileupload-buttontype-icon-position: -197px -205px;
+  --lyte-fileupload-msg-wrap-font-size: var(--lyte-font-size-small);
+  --lyte-fileupload-file-name-font-size: var(--lyte-font-size-regular);
+  --lyte-fileupload-file-size-font-size: var(--lyte-font-size-xs);
+  --lyte-fileupload-failure-msg-font-size: var(--lyte-font-size-xs);
+  --lyte-fileupload-retry-msg-font-size: var(--lyte-font-size-xs);
+  --lyte-fileupload-inputtype-file-name-font-size: var(--lyte-font-size-small);
+}

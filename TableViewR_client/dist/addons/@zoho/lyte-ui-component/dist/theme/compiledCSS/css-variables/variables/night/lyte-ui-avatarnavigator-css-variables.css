@@ -1,0 +1,19 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-avatar-item-hover-color: #6f6f6f;
+  --lyte-avatar-item-selected-color: #5ba1e5;
+  --lyte-avatar-item-hover-border-color: var(--lyte-avatar-item-hover-color);
+  --lyte-avatar-item-hover-boxshadow-color: var(--lyte-avatar-item-hover-color);
+  --lyte-avatar-item-selected-border-color: var(--lyte-avatar-item-selected-color);
+  --lyte-avatar-item-selected-boxshadow-color: var(--lyte-avatar-item-selected-color);
+  --lyte-avatar-item-loading-bg: #444;
+  --lyte-avatar-nav-border-color: #6f6f6f;
+  --lyte-avatar-nav-bg: #666;
+  --lyte-avatar-nav-hover-bg: #888;
+}

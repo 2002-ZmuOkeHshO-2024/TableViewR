@@ -1,0 +1,73 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/treeselect/treeselect.variables.less";
+
+
+
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{treeselect}/ui-elements/tour/treeselect.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{treeselect}/global/@{direction}.less";
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/treeselect.variables.less";
+
+lyte-treeselect {
+	display: inline-block;
+}
+lyte-treeselect lyte-dropdown {
+	.lyteTreeselectDropdownMixin();
+	max-width: @max-w;
+	display: block;
+}
+lyte-treeselect lyte-dropdown[lt-prop-type="multiple"] lyte-drop-button::after {
+	content: none;
+}
+.lyteTreeSelectDropbox lyte-drop-body {
+	.lyteTreeSelectDropboxBodyMixin();
+	padding: @padding;
+}
+.lyteTreeSelectDropbox lyte-tree {
+	.lyteTreeSelectDropboxTreeMixin();
+	@{property-padding-left}: @padding-left;
+}
+.lyteTreeSelectDropbox lyte-drop-body > lyte-tree {
+	.lyteTreeSelectDropboxDirectTreeMixin();
+	@{property-padding-left}: @padding-left;
+}
+.lyteTreeSelectDropbox  lyte-tree-body {
+	.lyteTreeSelectDropboxTreeBodyMixin();
+	margin-top: @margin-top;
+}
+.lyteTreeSelectDropbox lyte-tree-content {
+	display: flex;
+	align-items: center;
+}
+.lyteTreeSelectDropbox lyte-drop-item.lyteDropdownActive,
+.lyteTreeSelectDropbox .lyteTreeMainContainer > lyte-yield,
+.lyteTreeSelectDropbox .collapseBox {
+	display: block;
+}
+.lyteTreeSelectDropbox .lyteTreeHasNoChild .collapseBox {
+	display: none;
+}
+.lyteTreeDropItem {
+	.lyteTreeDropItemMixin();
+	flex: @flex;
+	@{property-padding-left}: @padding-left;
+	@{property-margin-left}: @margin-left;
+}
+.lyteTreeHasNoChild .lyteTreeDropItem {
+	.lyteTreeHasNoChildDropItemMixin();
+	@{property-padding-left}: @padding-left;
+	@{property-margin-left}: @margin-left;
+}
+.lyteTreeSelectSelected {
+	.lyteTreeSelectSelectedMixin();
+	background: @bg;
+}

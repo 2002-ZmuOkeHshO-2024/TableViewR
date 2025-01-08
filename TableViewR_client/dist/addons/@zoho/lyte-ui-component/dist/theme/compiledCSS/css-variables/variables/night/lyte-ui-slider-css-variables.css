@@ -1,0 +1,16 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-range-slider-bg: #5f6a87;
+  --lyte-range-slider-fill-bg: var(--lyte-theme-active-element-bg);
+  --lyte-range-slider-handle-bg: var(--lyte-theme-body-bg);
+  --lyte-range-slider-handle-border-color: #4495e4;
+  --lyte-range-slider-tick-bg: #777;
+  --lyte-range-slider-text-color: var(--lyte-common-text-color2);
+  --lyte-slider-scale-label-font-size: var(--lyte-font-size-xs);
+}

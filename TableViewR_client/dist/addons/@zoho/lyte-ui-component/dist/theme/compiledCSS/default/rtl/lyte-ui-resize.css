@@ -1,0 +1,80 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+.lyteResizeElement {
+  position: relative;
+}
+.lyteResizeHandle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #5ba1e5;
+  transform: translate(50%, -50%);
+  display: none;
+}
+.lyteResizeSelected .lyteResizeHandle {
+  display: block;
+}
+.lyteResizeN {
+  top: 0;
+  right: 50%;
+}
+.lyteResizeNW {
+  top: 0;
+  right: 0%;
+}
+.lyteResizeNE {
+  top: 0;
+  right: 100%;
+}
+.lyteResizeS {
+  right: 50%;
+  top: 100%;
+}
+.lyteResizeSW {
+  right: 0%;
+  top: 100%;
+}
+.lyteResizeSE {
+  right: 100%;
+  top: 100%;
+}
+.lyteResizeW {
+  right: 0;
+  top: 50%;
+}
+.lyteResizeE {
+  right: 100%;
+  top: 50%;
+}
+.lyteResizeInfoDiv {
+  position: absolute;
+  display: block;
+  border: 1px solid #d6d6d6;
+  padding: 8px;
+  pointer-events: none;
+  z-index: 1080;
+}
+.lyteResizeCursorNE,
+.lyteResizeCursorSW {
+  cursor: nwse-resize;
+}
+.lyteResizeCursorNW,
+.lyteResizeCursorSE {
+  cursor: nesw-resize;
+}
+.lyteResizeCursorN,
+.lyteResizeCursorS {
+  cursor: ns-resize;
+}
+.lyteResizeCursorW,
+.lyteResizeCursorE {
+  cursor: ew-resize;
+}

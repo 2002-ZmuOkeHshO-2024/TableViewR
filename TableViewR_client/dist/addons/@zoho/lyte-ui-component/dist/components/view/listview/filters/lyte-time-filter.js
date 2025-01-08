@@ -1,0 +1,296 @@
+Lyte.Component.register("lyte-time-filter", {
+_template:"<template tag-name=\"lyte-time-filter\"> <lyte-dropdown lt-prop-selected=\"{{lbind(selected)}}\" lt-prop-placeholder=\"{{ltPropPlaceholder}}\"> <template is=\"registerYield\" yield-name=\"yield\"> <lyte-drop-box class=\"lyteTimeFilterDropdown\"> <template is=\"if\" value=\"{{isSearch}}\"><template case=\"true\"> <lyte-search lt-prop-query-selector=\"{ &quot;scope&quot; : &quot;.lyteTimeFilterDropdown:not(.lyteDropdownHidden)&quot;, &quot;search&quot; : &quot;lyte-drop-item&quot; }\" on-search=\"{{method('search')}}\"></lyte-search> </template></template> <lyte-drop-body> <template is=\"forIn\" object=\"{{ltPropOptions}}\" value=\"value\" key=\"key\"> <lyte-drop-item data-value=\"{{key}}\">{{value}}</lyte-drop-item> </template><template is=\"if\" value=\"{{isSearch}}\"><template case=\"true\"> <div class=\"{{if(noResult,'lyteNumberFilterNoResult','lyteNumberFilterNoResult lyteSearchHidden')}}\">{{ltPropNoMatch}}</div> </template></template> </lyte-drop-body> </lyte-drop-box> </template> </lyte-dropdown> <div class=\"lyteTextFilterWrapper\"> <template is=\"if\" value=\"{{renderFirst}}\"><template case=\"true\"> <lyte-time-picker lt-prop-inline=\"false\" lt-prop-value=\"{{lbind(first)}}\" lt-prop-time-format=\"hh:mm:ss A\" lt-prop-aria-attributes=\"{&quot;input&quot;:&quot;Time Picker&quot;}\" lt-prop-id=\"time\" lt-prop-class=\"time\" lt-prop-name=\"time\"></lyte-time-picker> </template></template><template is=\"if\" value=\"{{renderSecond}}\"><template case=\"true\"> <lyte-time-picker lt-prop-inline=\"false\" lt-prop-value=\"{{lbind(second)}}\" lt-prop-time-format=\"hh:mm:ss A\" lt-prop-aria-attributes=\"{&quot;input&quot;:&quot;Time Picker&quot;}\" lt-prop-id=\"time\" lt-prop-class=\"time\" lt-prop-name=\"time\"></lyte-time-picker> </template></template> </div> </template>",
+_dynamicNodes : [{"type":"attr","position":[1]},{"type":"registerYield","position":[1,1],"dynamicNodes":[{"type":"attr","position":[1,1]},{"type":"if","position":[1,1],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[1]},{"type":"componentDynamic","position":[1]}]}},"default":{}},{"type":"attr","position":[1,3,1]},{"type":"forIn","position":[1,3,1],"dynamicNodes":[{"type":"attr","position":[1]},{"type":"text","position":[1,0]},{"type":"componentDynamic","position":[1]}]},{"type":"attr","position":[1,3,2]},{"type":"if","position":[1,3,2],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[1]},{"type":"text","position":[1,0]}]}},"default":{}},{"type":"componentDynamic","position":[1,3]},{"type":"componentDynamic","position":[1]}]},{"type":"componentDynamic","position":[1]},{"type":"attr","position":[3,1]},{"type":"if","position":[3,1],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[1]},{"type":"componentDynamic","position":[1]}]}},"default":{}},{"type":"attr","position":[3,2]},{"type":"if","position":[3,2],"cases":{"true":{"dynamicNodes":[{"type":"attr","position":[1]},{"type":"componentDynamic","position":[1]}]}},"default":{}}],
+_observedAttributes :["ltPropCondition","ltPropPlaceholder","ltPropOptions","ltPropNoMatch","ltPropMin","ltPropMax","ltPropSearchCount","ltPropReset","ltPropTempCondition","selected","renderFirst","renderSecond","noResult","isSearch","first","second","isNeg","hideFirst","hideSecond"],
+
+
+	init : function(){
+		var __data = this.data;
+		__data.isSearch = Object.keys( __data.ltPropOptions ).length >= __data.ltPropSearchCount;
+		__data.hideFirst = __data.hideSecond = 'lyteSearchHidden';
+
+		if( _lyteUiUtils.lyteUiIsEmpty( __data.ltPropCondition ) ){
+			this.setData( 'ltPropCondition', { input : "", start_diff : 0, end_diff : 0, start : -Infinity, end : Infinity, isNeg : false, isValid : false, value : "", label : "", type : "time" } );
+		}else{
+			this.updateInitialConditions( );
+		}
+	},
+
+	condn_obs : function( arg ){
+		this.setData( 'selected', (arg.newValue && arg.newValue.value) || "" );
+	}.observes( 'ltPropTempCondition'),
+
+	updateInitialConditions : function(){
+		this.setData( 'ltPropTempCondition', this.data.ltPropCondition );
+		this.setData( 'selected', this.data.ltPropCondition.value  );
+
+		let condition = this.data.ltPropCondition;
+		let selected = this.data.selected;
+		let isValid = condition.isValid;
+
+		let first = '', second = '', match;
+
+		switch( selected ){
+			case 'is':
+			case 'is_not':
+				first = condition.input;
+			break;
+			case 'greater_than':
+				first = condition.input.match(/> (.*)/)[1]
+			break;
+			case 'greater_than_or_equal':
+				first = condition.input.match(/>= (.*)/)[1];
+			break;
+			case 'less_than':
+				first = condition.input.match(/< (.*)/)[1];
+			break;
+			case 'less_than_or_equal':
+				first = condition.input.match(/<= (.*)/)[1];
+			break;
+			case 'between':
+			case 'not_between':
+				match = condition.input.match(/(\d*) <= && (\d*) >=/)
+				first = match[1];
+				second = match[2];
+			break;
+			case 'is_empty':
+			case 'is_not_empty':
+			break;
+		}
+
+		first && this.setData( {
+			'first' : first,
+			'renderFirst' : true,
+			'hideFirst' : ''
+		} ) ;
+
+		second && this.setData( {
+			'second' : second,
+			'renderSecond' : true,
+			'hideSecond' : ''
+		} );
+		
+	},
+
+	data : function(){
+		var __string = "string",
+		__array = "array",
+		__object = "object",
+		__boolean = "boolean",
+		__number = 'number';
+
+		return {
+			ltPropCondition : Lyte.attr( __object ),
+			ltPropPlaceholder : Lyte.attr( __string, { default : "None" } ),
+			ltPropOptions : Lyte.attr( __object, { default : {
+				is : _lyteUiUtils.i18n( 'equal', 'listview.filter', "Equals to" ),
+				is_not : _lyteUiUtils.i18n( 'not.equal', 'listview.filter', "Not equals to" ),
+				between : _lyteUiUtils.i18n( "between", "listview.filter", "Between" ),
+				less_than : _lyteUiUtils.i18n( "less.than", "listview.filter", "Less than" ),
+				greater_than : _lyteUiUtils.i18n( "greater.than", "listview.filter", "Greater than" ),
+				less_than_or_equal : _lyteUiUtils.i18n( "less.than.or.equal", "listview.filter", "Less than or equal" ),
+				greater_than_or_equal : _lyteUiUtils.i18n( "greater.than.or.equal", "listview.filter", "Greater than or equal" ),
+				not_between : _lyteUiUtils.i18n( "not.between", "listview.filter", "Not between" ),
+				is_empty : _lyteUiUtils.i18n( 'is.empty', 'listview.filter', "Is empty" ),
+				is_not_empty : _lyteUiUtils.i18n( 'is.not.empty', 'listview.filter', "Is not empty" )
+			} } ),
+
+			ltPropNoMatch : Lyte.attr( __string, { default : _lyteUiUtils.i18n( 'no.results.found', void 0, 'No Results Found' ) } ),
+			ltPropMin : Lyte.attr( __number ),
+			ltPropMax : Lyte.attr( __number ),
+
+			ltPropSearchCount : Lyte.attr( __number, { default : 8 } ),
+
+			ltPropReset : Lyte.attr( __boolean, { default : false } ),
+			ltPropTempCondition : Lyte.attr( __object ),
+
+			selected : Lyte.attr( __string, { default : "" } ),
+			renderFirst : Lyte.attr( __boolean ),
+			renderSecond : Lyte.attr( __boolean ),
+			noResult : Lyte.attr( __boolean ),
+
+			isSearch : Lyte.attr( __boolean ),
+
+			first : Lyte.attr( __string, { default : "" } ),
+			second : Lyte.attr( __string, { default : "" } ),
+			isNeg : Lyte.attr( __boolean, { default : false } ),
+			hideFirst : Lyte.attr( __string ),
+			hideSecond : Lyte.attr( __string )
+		}		
+	},
+
+	reset_obs : function( arg ){
+		if( arg.newValue ){
+			this.setData( arg.item, false );
+			this.setData( 'selected', "" );
+		}
+	}.observes( 'ltPropReset' ),
+
+	selected_obs : function( arg ){
+		var selected = (arg && arg.newValue) || this.data.selected,
+		renderFirst = false,
+		renderSecond = false,
+		isNeg = false,
+		__data = this.data,
+		hiddenclass = 'lyteSearchHidden',
+		condition = __data.ltPropTempCondition,
+		Lc = Lyte.objectUtils,
+		inf = Infinity,
+		ns = "lyteTimeFilter_";
+
+		$L( this.$node ).addClass( ns + selected ).removeClass( ns + ( (arg && arg.oldValue) || "" ) );
+
+		switch( selected ){
+			case 'is' : {
+				renderFirst = true;
+			}
+			break;
+			case 'is_not' : {
+				renderFirst = true;
+				isNeg = true;
+			}
+			break;
+			case 'is_empty' : {
+				isNeg = true;
+			}
+			break;
+			case 'between' : {
+				renderFirst = renderSecond = true;
+			}
+			break;
+			case 'not_between' : {
+				isNeg = renderFirst = renderSecond = true;
+			}
+			break;
+			case 'less_than' :
+			case 'greater_than' :
+			case 'less_than_or_equal' :
+			case 'greater_than_or_equal' : {
+				renderFirst = true;
+			}
+			break;
+			case 'in_the_last' : {
+				render_drop = true;
+			}
+			break;
+		}
+
+		debugger
+		this.setData({
+			renderFirst : renderFirst,
+			renderSecond : renderSecond,
+			first : "", // 12:00:00 AM
+			second : "",
+			hideFirst : renderFirst ? '' : hiddenclass,
+			hideSecond : renderSecond ? '' : hiddenclass
+		});
+
+		Lc( condition, 'add', 'isNeg', isNeg );
+
+		Lc( condition, 'add', 'value', selected );
+		Lc( condition, 'add', 'label', __data.ltPropOptions[ selected ] || "" );
+
+		this.update_value( '', '' );
+	}.observes( 'selected' ),
+
+	start_end_obs : function( arg ){
+		var __data = this.data;
+
+		this.update_value(__data.first, __data.second );
+	}.observes( 'first', 'second' ),
+
+	update_value : function( __first, __second ){
+		var __data = this.data,
+		condition = __data.ltPropTempCondition,
+		hideFirst = __data.hideFirst,
+		hideSecond = __data.hideSecond,
+		isValid = false,
+		inf = Infinity,
+		startValue = "",
+		endValue = "",
+		Lc = Lyte.objectUtils,
+		start_diff = 0,
+		end_diff = 0,
+		input = "";
+
+		if( hideFirst && hideSecond ){
+			isValid = __first != "";
+		} else if( hideSecond ){
+			isValid = !!__first;
+		} else {
+			isValid = !!__first && !!__second;
+		}
+
+		if( isValid ){
+			switch( __data.selected ){
+				case 'is' : 
+				case 'is_not' : {
+					input = startValue = endValue = __first;
+				}
+				break;
+				case 'greater_than' : {
+					startValue = __first;
+					endValue = inf;
+					start_diff = -1;
+
+					input = "> " + __first;
+				}
+				break;
+				case 'greater_than_or_equal' : {
+					startValue = __first;
+					endValue = inf;
+
+					input = ">= " + __first;
+				}
+				break;
+				case 'less_than' : {
+					endValue = __first;
+					startValue = -inf;
+					end_diff = -1;
+
+					input = "< " + __first;
+				}
+				break;
+				case 'less_than_or_equal' : {
+					endValue = __first;
+					startValue = -inf;
+
+					input = "<= " + __first;
+				}
+				break;
+				case 'between' : 
+				case 'not_between' : {
+					startValue = __first;
+					endValue = __second;
+
+					input = __first + " <= && " + __second + " >=" 
+				}
+				break;
+				case 'is_empty' : 
+				case 'is_not_empty' : {
+					startValue = -inf;
+					endValue = inf;
+				}
+				break;
+			}
+		} else {
+			startValue = endValue = '';
+		}
+
+		Lc( condition, 'add', 'start', startValue );
+		Lc( condition, 'add', 'end', endValue );
+		Lc( condition, 'add', 'isValid', isValid );
+		// condition['isValid']=isValid;
+		Lc( condition, 'add', 'start_diff', start_diff );
+		Lc( condition, 'add', 'end_diff', end_diff );
+		Lc( condition, 'add', 'input', input );
+		Lc( condition, 'add', 'type', "time" );
+		Lc( condition, 'add', 'class', condition.isValid ? 'lyteListFilterSelected' : '' );
+	},
+
+	methods : {
+		search : function( arg ){
+			this.setData( 'noResult', arg.length == 0 );
+		}
+	}
+});

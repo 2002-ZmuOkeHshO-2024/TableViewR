@@ -1,0 +1,13 @@
+!SESSION 2025-01-08 16:33:53.758 -----------------------------------------------
+eclipse.buildId=4.33.0.20240905-0613
+java.version=21.0.4
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/mukesh-tt0515/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/mukesh-tt0515/.eclipse_keyring -data /Users/mukesh-tt0515/Documents/Task_1/TableViewR
+
+!ENTRY ch.qos.logback.classic 1 0 2025-01-08 16:33:57.706
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2025-01-08 16:33:59.477
+!MESSAGE Logback config file: /Users/mukesh-tt0515/Documents/Task_1/TableViewR/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml

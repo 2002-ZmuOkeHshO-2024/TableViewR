@@ -1,0 +1,45 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-dropdown-bg: var(--lyte-theme-body-bg);
+  --lyte-dropdown-text-color: var(--lyte-common-text-color2);
+  --lyte-dropdown-btn-border-color: #6f6f6f;
+  --lyte-dropdown-btn-hover-border-color: #c1c1c1;
+  --lyte-dropbox-border-color: #6f6f6f;
+  --lyte-dropbox-box-shadow-color: transparent;
+  --lyte-dropbox-item-hover-bg: #444;
+  --lyte-dropbox-arrow-border-color: #777;
+  --lyte-dropbox-border-radius: 2px;
+  --lyte-dropbox-translate-width: 8px;
+  --lyte-dropbox-zindex: var(--lyte-level4-zindex);
+  --lyte-dropdown-multiselect-li-bg: #444;
+  --lyte-dropdown-multiselect-li-border-color: #555;
+  --lyte-dropdown-multiselect-li-selected-bg: #eef5fa;
+  --lyte-dropdown-multiselect-li-selected-border-color: #3ea7fc;
+  --lyte-dropdown-multiselect-li-selected-hover-bg: #daebf7;
+  --lyte-dropdown-multiselect-placeholder-text-color: #999;
+  --lyte-dropdown-multiselect-remove-hover-bg: #333;
+  --lyte-dropdown-no-result-text-color: #8a8a8a;
+  --lyte-dropbox-button-overlap-bg: #ededed;
+  --lyte-dropbox-footer-border-color: #ddd;
+  --lyte-dropdown-freeze-layer-bg: #fff;
+  --lyte-dropdown-button-disabled-bg: #777;
+  --lyte-dropdown-button-disabled-text-color: #a6a6a6;
+  --lyte-dropdown-multiple-disabled-li-bg: #777;
+  --lyte-dropdown-multiple-disabled-li-border-color: #999;
+  --lyte-dropdown-placeholder-text-color: #828282;
+  --lyte-dropdown-deselect-icon-hover-bg: #666;
+  --lyte-dropdown-dropbox-font-size: var(--lyte-font-size-medium);
+  --lyte-dropdown-dropitem-font-size: var(--lyte-font-size-medium);
+  --lyte-dropdown-multiselect-li-font-size: var(--lyte-font-size-medium);
+  --lyte-dropdown-multiselect-placeholder-font-size: var(--lyte-font-size-regular);
+  --lyte-dropdown-no-result-font-size: var(--lyte-font-size-regular);
+  --lyte-dropdown-dropbtn-input-font-size: var(--lyte-font-size-regular);
+  --lyte-dropdown-action-font-size: var(--lyte-font-size-regular);
+  --lyte-dropdown-drop-label-font-size: var(--lyte-font-size-medium);
+}

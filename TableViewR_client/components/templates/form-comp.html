@@ -1,0 +1,36 @@
+<template class="form-container" tag-name='form-comp'>
+
+    <div class="user-tables">
+        <user-comp class="user-dropdown" from-where="{{'home'}}"></user-comp>
+    </div>
+
+    <div class="file-upload">
+        <div class="file-input">
+            <lyte-fileupload class="filedata" lt-prop-yield=false lt-prop-multiple=false lt-prop-chunk=true
+                lt-prop-chunk-size=10000000 on-file-success="{{method('onFileSuccess')}}"
+                on-file-failure="{{method('onFileFailure')}}" on-remove="{{method('onRemove')}}">
+            </lyte-fileupload>
+        </div>
+    </div>
+
+
+    <div class="logout">
+        <lyte-button lt-prop-class="logout-button" lt-prop-type="secondary" class="logout"
+            onclick="{{action('logout')}}">
+            <template is="registerYield" yield-name="text">
+                Logout
+            </template>
+        </lyte-button>
+    </div>
+
+
+    <div class="modal" id="modal">
+
+        <div class="modal-content" id="configPage">
+
+        </div>
+
+
+    </div>
+
+</template>

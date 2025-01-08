@@ -1,0 +1,197 @@
+<template class="table-container" tag-name="table-view">
+
+
+    <div class="options">
+        <div class="table-list">
+
+            <user-comp from-where="{{'table'}}"></user-comp>
+        </div>
+
+
+        <div class="delete-option">
+
+
+
+
+            <lyte-button lt-prop-class="dropbutton" onclick="{{action('deleteTables')}}">
+                <template is="registerYield" yield-name="text">
+                    Drop
+                </template>
+            </lyte-button>
+
+            <lyte-multi-dropdown class="user-drop-tables" lt-prop-data="{{dropData}}" lt-prop-user-value="name"
+                lt-prop-system-value="value" on-before-show="{{method('tablesList')}}"
+                lt-prop-placeholder="select to drop tables">
+            </lyte-multi-dropdown>
+
+
+
+
+            <!--lt-prop-selected="{{selectedData}}" lt-prop-type="checkbox" -->
+
+        </div>
+
+        <div class="download-option">
+
+
+
+            <div class="file-name">
+
+                <lyte-input class="fileName" lt-prop-id="filename" lt-prop-direction='horizontal'
+                    lt-prop-appearance='box' lt-prop-placeholder="file name" required>
+                </lyte-input>
+
+
+            </div>
+
+
+            <div class="file-format">
+
+
+                <lyte-dropdown lt-prop-placeholder="select format" class="export" lt-prop-options={{fileFormats}}
+                    on-option-selected="{{method('download')}}" lt-prop-user-value="name" lt-prop-type="checkbox"
+                    lt-prop-system-value="value">
+
+
+                </lyte-dropdown>
+
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="logout1">
+            <lyte-button lt-prop-class="logout-button" lt-prop-type="secondary" class="logout"
+                onclick="{{action('logout')}}">
+                <template is="registerYield" yield-name="text">
+                    Logout
+                </template>
+            </lyte-button>
+        </div>
+
+
+    </div>
+
+    <div class="table">
+
+
+
+        <div class="query-element">
+
+
+            <div class="query-label">
+
+                SQL query
+
+            </div>
+
+
+
+            <div class="query1-element">
+
+                <lyte-input class="queryInput" lt-prop-type='textarea' lt-prop-value="{{tableView.currentQuery}}"
+                    lt-prop-text-area-resize='{"horizontal" : true, "vertical" : true }'
+                    lt-prop-placeholder="Enter your query"></lyte-input>
+
+            </div>
+
+            <div class="executebutton">
+                <lyte-button lt-prop-class="execute-button" onclick="{{action('executeQuery')}}">
+                    <template is="registerYield" yield-name="text">
+                        execute
+                    </template>
+                </lyte-button>
+            </div>
+        </div>
+
+
+        <div class="tableview">
+
+
+            <div class="table1-view">
+                <lyte-table class="table2-view" lt-prop-header={{tableView.headerJSON}}
+                    lt-prop-content={{tableView.contentJSON}} lt-prop-header-label-key="name"
+                    lt-prop-body-label-key="body"> </lyte-table>
+
+            </div>
+
+
+            <div class="border">
+
+
+                <div class="pagination">
+
+                    <div class="prev">
+
+                        <lyte-button lt-prop-class="prev-button" onclick="{{action('goto','prev',event)}}">
+                            <template is="registerYield" yield-name="text">
+                                <span class="prev-arrow"> &#x21fd; </span>
+                            </template>
+                        </lyte-button>
+
+                    </div>
+
+
+
+
+                    <div class="view">
+
+                        <lyte-number lt-prop-direction='horizontal' lt-prop-min="1"
+                            lt-prop-max="{{tableView.totalPages}}" class="GoTo"
+                            lt-prop-value="{{tableView.currentPage}}"
+                            onkeydown="{{action('goto','current',event)}}"></lyte-number>
+
+
+                    </div>
+
+
+                    <div class="next">
+
+                        <lyte-button lt-prop-class="next-button" onclick="{{action('goto','next',event)}}">
+                            <template is="registerYield" yield-name="text">
+                                <span class="next-arrow">&#x21fe;</span>
+                            </template>
+                        </lyte-button>
+
+
+                    </div>
+
+                </div>
+
+                <div class="add-option">
+
+
+                    <lyte-button lt-prop-class="add-button" onclick="{{action('fileUpload')}}">
+                        <template is="registerYield" yield-name="text">
+                            Add Table
+                        </template>
+                    </lyte-button>
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+</template>

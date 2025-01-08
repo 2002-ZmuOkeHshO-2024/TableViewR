@@ -1,0 +1,27 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-voicenote-bg: #f5f8fb;
+  --lyte-voicenote-play-btn-bg: #8ac0f2;
+  --lyte-voicenote-play-btn-border-color: #fff;
+  --lyte-voicenote-play-btn-boxshadow-color: #00000040;
+  --lyte-voicenote-loading-bar-bg: #dce3eb;
+  --lyte-voicenote-loading-handler-bg: #59b0ff;
+  --lyte-voicenote-error-handler-bg: #dce3eb;
+  --lyte-voicenote-completed-bg: #8ac0f2;
+  --lyte-voicenote-duration-text-color: #949fb5;
+  --lyte-voicenote-duration-separator-color: #949fb5;
+  --lyte-voicenote-volume-slider-fill-bg: #8ac0f2;
+  --lyte-voicenote-volume-slider-handler-bg: #59b0ff;
+  --lyte-voicenote-playback-speed-text-color: #666;
+  --lyte-voicenote-playback-speed-drop-item-text-color: #666;
+  --lyte-voicenote-circle-loader-color: #fff;
+  --lyte-voicenote-duration-font-size: var(--lyte-font-size-small);
+  --lyte-voicenote-playback-speed-font-size: var(--lyte-font-size-xs);
+  --lyte-voicenote-playback-speed-drop-item-font-size: var(--lyte-font-size-small);
+}

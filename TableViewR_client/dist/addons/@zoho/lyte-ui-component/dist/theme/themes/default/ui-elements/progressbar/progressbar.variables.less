@@ -1,0 +1,85 @@
+.progressBarHorizontal() {
+	@h: 14px;
+	@w: calc(100% - 200px);
+	@bg: @progressBarHorizontalBg;
+	@border-radius: @progressBarRadius;
+}
+.progressStatus() {
+	@border-radius: 20px;
+	@color: @progressStatusColor;
+    @bg: #51a2ee;
+}
+.progressMovingObj() {
+	@bg-img: linear-gradient(-45deg, rgba(221, 221, 221, 0.29) 25%, transparent 25%, transparent 50%, rgba(221, 221, 221, 0.29) 50%, rgba(221, 221, 221, 0.29) 75%, transparent 75%, transparent);
+	@background-size: 20px 20px;
+	@border-radius: 20px;
+}
+.keyframesMove() {
+	@bg-pos: 20px 20px;
+}
+.progressPercentage() {
+	@font-size: 12px;
+	@line-height: 14px;
+	@color: @progressStatusColor;
+	@top: 0px;
+}
+.completedProgressStatus() {
+	@bg: @progressBarHorizonCompletedBg;
+}
+.circleProgressBar() {
+	@w: 100px;
+	@h: 100px;
+}
+.CircleType() {
+	@font-size: 17px;
+	@color: @progressBarCircleTextColor;
+}
+.circleProgressBarCircle() {
+    @stroke: #DCE0E3;
+}
+.lyteProgressStatusStackMixin() {
+	@color: @progressStatusColor;
+	@bg: #007bff;
+	@transition: width 2s linear;
+}
+
+.lyteProgressBarWithLineSeparatorStackFirstChildMixin() {
+	@border-radius: @progressBarRadius 0 0 @progressBarRadius;
+}
+.lyteProgressBarWithLineSeparatorStackLastChildMixin() {
+	@border-radius: 0 @progressBarRadius @progressBarRadius 0;
+}
+.lyteProgressBarWithLineSeparatorStackOnlyChildMixin() {
+	@border-radius: @progressBarRadius;
+}
+.lyteProgressBarLineSeparatorMixin() {
+	@w: 1px;
+	@h: 100%;
+	@padding: 5px 0;
+	@bg: #000;
+	@transform: translate(0, -5px);
+}
+.lyteProgressBarVerticalMixin() {
+	@bg-color: #e5e5e5;
+	@bg-pos: 50% 50%;
+	@border-radius: @progressBarRadius;
+}
+.lyteProgressBarStatusVerticalMixin() {
+	@border-radius: @progressBarRadius;
+	@bg: #51a2ee;
+	@w: 100%;
+	@box-shadow: 0 1px 1px rgba(0,0,0,.075) inset;
+	@transition: height 0.25s;
+	@left: 0;
+	@h: 0;
+}
+.lyteProgressStatusVerticalUpMixin() {
+	@bottom: 0;
+}
+.lyteProgressStatusVerticalDownMixin() {
+	@top: 0;
+}
+.lyteProgressStatusVerticalPercentageMixin() {
+	@top: 50%;
+	@transform: translate(-50%, -50%);
+}

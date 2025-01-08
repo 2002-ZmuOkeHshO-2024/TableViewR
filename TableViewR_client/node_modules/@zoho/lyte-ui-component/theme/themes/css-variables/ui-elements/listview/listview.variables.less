@@ -1,0 +1,108 @@
+:root {
+    --lyte-listview-wrapper-sticky-table-bg: #fff;
+    --lyte-listview-wrapper-sticky-table-border-bottom-color: #d6d6d6;
+    --lyte-listview-wrapper-table-sticky-table-border-color: #d6d6d6;
+    --lyte-listview-fake-header-bg: #fff;
+    --lyte-listview-fake-cell-odd-bg: #fff;
+    --lyte-listview-fixed-bg: #fff;
+    --lyte-listview-resizeHandler-after-bg: #d7e2ed;
+    --lyte-listview-wrapper-td-border-bottom-color: #e2e2e2;
+    --lyte-listview-wrapper-td-bg: #fff;
+    --lyte-listview-wrapper-td-color: #111;
+    --lyte-listview-wrapper-td-bg: #f7f9fb;
+    --lyte-listview-edit-element-border-bg: #5ba1e5;
+    --lyte-listview-multiselect-filter-table-border-color: #d6d6d6;
+    --lyte-listview-dateFilter-disabled-element-bg: #eee;
+    --lyte-listview-filter-border-color: #d6d6d6;
+    --lyte-listview-filter-key-color: #777;
+    --lyte-listview-filter-value-wrap-border-color: #d6d6d6;
+    --lyte-listview-remove-filter-bg: #000;
+    --lyte-listview-remove-filter-hover-bg: #f00;
+    --lyte-listview-table-accordian-icon-bg: #333;
+    --lyte-listview-group-heading-hover-bg: #f7f9fb;
+    --lyte-listview-group-heading-hover-td-bg: transparent;
+}
+
+.lyteListviewWrapperStickyTableThMixin() {
+    @bg: var(--lyte-listview-wrapper-sticky-table-bg);
+    @border-bottom: 2px solid var(--lyte-listview-wrapper-sticky-table-border-bottom-color);
+}
+
+.lyteListviewWrapperTableStickyTableMixin() {
+	@border: 1px solid var(--lyte-listview-wrapper-table-sticky-table-border-color);
+}
+
+.lyteListFakeHeaderMixin() {
+    @bg: var(--lyte-listview-fake-header-bg);
+}
+
+.LytelistfakecellnthchildOddMixin() {
+	@bg: var(--lyte-listview-fake-cell-odd-bg);
+}
+
+.LytelistfakecellnthchildEvenMixin() {
+	@bg: var(--Lyte-list-fake-cell-even-bg);
+}
+
+.lyteListFixedMixin() {
+	@bg: var(--lyte-listview-fixed-bg);
+}
+
+.lyteListResizeHandlerAfterMixin() {
+	@bg: var(--lyte-listview-resizeHandler-after-bg);
+}
+
+.lyteListviewWrapperTdMixin() {
+    @border-bottom: 1px solid var(--lyte-listview-wrapper-td-border-bottom-color);
+	@bg: var(--lyte-listview-wrapper-td-bg);
+	@color: var(--lyte-listview-wrapper-td-color);
+}
+
+.lyteListviewWrapperTdHoverMixin() {
+	@bg: var(--lyte-listview-wrapper-td-bg);
+}
+
+.lyteListEditElementMixin() {
+	@border: 1px solid var(--lyte-listview-edit-element-border-bg);
+}
+
+.lyteMultiselectFilterTableMixin() {
+	@border: 1px solid var(--lyte-listview-multiselect-filter-table-border-color);
+}
+
+.lyteDateFilterDisabledElementMixin() {
+	@bg: var(--lyte-listview-dateFilter-disabled-element-bg);
+}
+
+.lyteListFiltersMixin() {
+	@border: 1px solid var(--lyte-listview-filter-border-color);
+}
+
+.lyteListFilterKeyMixin() {
+	@color: var(--lyte-listview-filter-key-color);
+}
+
+.lyteListFilterValueWrapMixin() {
+	@border: 1px solid var(--lyte-listview-filter-value-wrap-border-color);
+}
+
+.lyteListRemoveFilterMixin() {
+	@bg: var(--lyte-listview-remove-filter-bg);
+}
+
+
+.lyteListRemoveFilterHoverMixin() {
+	@bg: var(--lyte-listview-remove-filter-hover-bg);
+}
+
+.lyteListViewTableAccordionIconMixin() {
+	@bg: var(--lyte-listview-table-accordian-icon-bg);
+}
+
+.lyteGroupHeadingHoverMixin() {
+	@bg: var(--lyte-listview-group-heading-hover-bg);
+}
+
+.lyteGroupHeadingHoverTdMixin() {
+	@bg: var(--lyte-listview-group-heading-hover-td-bg);
+}

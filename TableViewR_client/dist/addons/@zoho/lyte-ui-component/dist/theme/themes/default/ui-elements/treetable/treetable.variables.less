@@ -1,0 +1,53 @@
+.lyteTreeTableMixin() {
+	@border: 1px solid #e2e2e2;
+}
+.lyteTreeTableThTdCommonMixin() {
+	@padding: 7px 15px;
+}
+.lyteTreeTableThMixin() {
+	@bg: #f7f7f7;
+	@border-right: 1px solid #e2e2e2;
+	@top: 0;
+	@z-index: 10;
+}
+.lyteTreeFixedHeaderMixin() {
+	@left: 0;
+	@z-index: 15;
+}
+.lyteTreeTableTdMixin() {
+	@border-right: 1px solid #e2e2e2;
+	@border-bottom: 1px solid #e2e2e2;
+}
+.lyteTreeFixedColMixin() {
+	@left: 0;
+	@bg:#fff;
+	@z-index: 5;
+}
+.lyteTreeTableRowLastOfTypeTdMixin() {
+	@border-bottom: 0;
+}
+.lyteTreeTableTdlastoftypeMixin() {
+	@border-right: 0;
+}
+.lyteTreeTableTdfirstchildMixin() {
+	@padding-left: calc((var(--tree-level) + 1) * 15px);
+}
+.lyteTreeTableIconMixin() {
+	@w: 15px;
+	@h: 15px;
+	@margin-left: -15px;
+}
+.lyteTreeTableIconAfterMixin() {
+	@w: 0;
+	@h: 0;
+	@border-right: 7px solid transparent;
+	@border-left: 7px solid transparent;
+	@border-top: 7px solid #555;
+}
+.lyteTreeTableClosedRowTableIconMixin() {
+	@transform: rotate(-90deg);
+}
+.lyteTreeLastFixedColMixin() {
+	@box-shadow: 3px 0 7px -2px rgba(0, 0, 0, 0.2);
+	@bg: green;
+}

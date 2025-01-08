@@ -1,0 +1,24 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-input-bg: var(--lyte-theme-body-bg);
+  --lyte-input-text-color: var(--lyte-common-text-color2);
+  --lyte-input-border-color: #6f6f6f;
+  --lyte-input-hover-border-color: #ccc;
+  --lyte-input-focus-border-color: #fff;
+  --lyte-input-border-radius: 2px;
+  --lyte-input-disabled-bg: #777;
+  --lyte-input-label-text-color: #bbb;
+  --lyte-input-font-size: var(--lyte-font-size-medium);
+  --lyte-input-datetime-placeholder-font-size: var(--lyte-font-size-regular);
+  --lyte-input-disabled-text-color: #999;
+  --lyte-input-placeholder-text-color: #a6a6a6;
+  --lyte-input-calendar-icon-color: #999;
+  --lyte-input-calendar-icon-hover-color: #ccc;
+  --lyte-input-calendar-icon-focus-color: var(--lyte-theme-active-element-bg);
+}

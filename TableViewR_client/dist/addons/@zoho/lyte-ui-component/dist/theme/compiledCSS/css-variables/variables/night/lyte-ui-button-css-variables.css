@@ -1,0 +1,54 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-button-border-width: 1px;
+  --lyte-button-border-style: solid;
+  --lyte-button-border-radius: 2px;
+  --lyte-button-default-bg: #333;
+  --lyte-button-default-text-color: #ddd;
+  --lyte-button-default-border-color: #555;
+  --lyte-button-default-hover-border-color: #777;
+  --lyte-button-primary-bg: var(--lyte-theme-active-element-bg);
+  --lyte-button-primary-text-color: #fff;
+  --lyte-button-primary-border-color: var(--lyte-theme-active-element-bg);
+  --lyte-button-primary-hover-bg: #3c98dd;
+  --lyte-button-primary-hover-text-color: #fff;
+  --lyte-button-primary-hover-border-color: #3c98dd;
+  --lyte-button-secondary-bg: #ddd;
+  --lyte-button-secondary-text-color: #555;
+  --lyte-button-secondary-border-color: #ddd;
+  --lyte-button-secondary-hover-bg: #d5d5d5;
+  --lyte-button-secondary-hover-color: #555;
+  --lyte-button-secondary-hover-border-color: #d5d5d5;
+  --lyte-button-success-bg: #19bc7d;
+  --lyte-button-success-text-color: #fff;
+  --lyte-button-success-border-color: #19bc7d;
+  --lyte-button-success-hover-bg: #10ab6f;
+  --lyte-button-success-hover-border-color: #10ab6f;
+  --lyte-button-outline-success-bg: #333;
+  --lyte-button-outline-success-text-color: #19bc7d;
+  --lyte-button-outline-success-border-color: #19bc7d;
+  --lyte-button-outline-success-hover-bg: #19bc7d;
+  --lyte-button-outline-success-hover-text-color: #fff;
+  --lyte-button-outline-success-hover-border-color: #19bc7d;
+  --lyte-button-failure-bg: #ec4844;
+  --lyte-button-failure-text-color: #fff;
+  --lyte-button-failure-border-color: #ec4844;
+  --lyte-button-failure-hover-bg: #da3e3e;
+  --lyte-button-failure-hover-border-color: #da3e3e;
+  --lyte-button-outline-failure-bg: #333;
+  --lyte-button-outline-failure-text-color: #ec4844;
+  --lyte-button-outline-failure-border-color: #ec4844;
+  --lyte-button-outline-failure-hover-bg: #ec4844;
+  --lyte-button-outline-failure-hover-text-color: #fff;
+  --lyte-button-outline-failure-hover-border-color: #ec4844;
+  --lyte-button-font-size: var(--lyte-font-size-medium);
+  --lyte-button-lg-font-size: var(--lyte-font-size-medium);
+  --lyte-button-sm-font-size: var(--lyte-font-size-small);
+  --lyte-button-exsm-font-size: var(--lyte-font-size-xs);
+}

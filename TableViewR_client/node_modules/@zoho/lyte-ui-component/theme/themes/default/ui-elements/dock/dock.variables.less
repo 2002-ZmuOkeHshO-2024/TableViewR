@@ -1,0 +1,114 @@
+.lyteDockYieldMixin() {
+    @top: 0;
+    @bottom: 0;
+    @left: 0;
+    @right: 0;
+    @padding: 5px;
+}
+.lyteDockMixin() {
+    @border: 0.5px solid rgb(24, 24, 28);
+    @bg: rgba(21, 19, 21, 0.313);
+    @border-radius: 10px;
+}
+.lyteDockIconWrapperMixin() {
+    @w: calc(var(--lyte-dock-icon-wrapper-size)*1px);
+    @h: calc(var(--lyte-dock-icon-wrapper-size)*1px);
+    @gap: 10px;
+}
+.lyteDockRightLeftIconWrapperMixin() {
+    @padding: 4px 0;
+}
+.lyteDockTopBottomIconWrapperMixin() {
+    @padding: 0 4px;
+}
+.lyteIconMixin() {
+    @w: 100%;
+    @h:100%;
+}
+.lyteDockTopBottomDockMixin() {
+    @max-h: calc(var(--lyte-dock-icon-max-size)*1px);
+    @min-h: calc(var(--lyte-dock-icon-min-size)*1px);
+    @padding: 0 6px;
+}
+.lyteDockRightLeftDockMixin() {
+    @max-w: calc(var(--lyte-dock-icon-max-size)*1px);
+    @min-w: calc(var(--lyte-dock-icon-min-size)*1px);
+    @padding: 6px 0;
+}
+.lyteDockTopAlignDockMixin() {
+    @transform: translateY(-110%);
+}
+.lyteDockBottomAlignDockMixin() {
+    @transform: translateY(110%);
+}
+.lyteDockRightAlignDockMixin() {
+    @transform: translateX(110%);
+}
+.lyteDockLeftAlignDockMixin() {
+    @transform: translateX(-110%);
+}
+
+.lyteDockTopAlignZoomedMixin() {
+    @padding-top: 9px;
+}
+.lyteDockTopAlignZoomed1Mixin() {
+    @padding-top: 6px;
+}
+.lyteDockTopAlignZoomed2Mixin() {
+    @padding-top: 3px;
+}
+.lyteDockRightAlignZoomedMixin() {
+    @padding-right: 9px;
+}
+.lyteDockRightAlignZoomed1Mixin() {
+    @padding-right: 6px;
+}
+.lyteDockRightAlignZoomed2Mixin() {
+    @padding-right: 3px;
+}
+.lyteDockLeftAlignZoomedMixin() {
+    @padding-left: 9px;
+}
+.lyteDockLeftAlignZoomed1Mixin() {
+    @padding-left: 6px;
+}
+.lyteDockLeftAlignZoomed2Mixin() {
+    @padding-left: 3px;
+}
+.lyteDockBottomTransformMixin() {
+    @transform: translateX(-50%);
+}
+.lyteDockBottomAlignZoomedMixin() {
+    @padding-bottom: 9px;
+}
+.lyteDockBottomAlignZoomed1Mixin() {
+    @padding-bottom: 6px;
+}
+.lyteDockBottomAlignZoomed2Mixin() {
+    @padding-bottom: 3px;
+}
+.lyteIconEnteredMixin() {
+    @w: 50px;
+    @h: 50px;
+}
+.lyteDockZoomedMixin() {
+    @w: calc(var(--zoom)*1px);
+    @h: calc(var(--zoom)*1px);
+}
+.lyteDockZoomed1Mixin() {
+    @w: calc(var(--zoom1)*1px);
+    @h: calc(var(--zoom1)*1px);
+}
+.lyteDockZoomed2Mixin() {
+    @w: calc(var(--zoom2)*1px);
+    @h: calc(var(--zoom2)*1px);
+}
+.lyteDockTooltipMixin() {
+    @padding: 3px 7px;
+    @bg: #000;
+    @color: #fff;
+    @border-radius: 5px;
+}
+.lyteDockShowMixin() {
+    @transform: translate(0);
+}

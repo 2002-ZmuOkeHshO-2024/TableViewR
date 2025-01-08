@@ -1,0 +1,66 @@
+/* Default theme imported */
+
+@import "../themes/default/ui-elements/gradientslider/gradient-slider.variables.less";
+
+/* Loading theme in configuration */
+
+@import "../config.less";
+
+@import (optional) "../themes/@{gradientslider}/ui-elements/gradientslider/gradient-slider.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{gradientslider}/global/@{direction}.less";
+
+/* Loading custom themes */
+
+@import (optional) "../overrides/ui-elements/gradient-slider.variables.less";
+
+
+.lyteGradientFillContainer {
+    .lyteGradientFillContainerMixin();
+	border: @border;
+	width: @w;
+	height: @h;
+	position: relative;
+}
+.lyteGradientHandler {
+    .lyteGradientHandlerMixin();
+	display: inline-block;
+	border: @border;
+	width: @w;
+	height: @h;
+	border-radius: @border-radius;
+	background-color: @bg;
+	position: absolute;
+	top: @top;
+	left: @left;
+	cursor: pointer;
+	outline: none;
+	z-index: 1;
+}
+.lyteGradientHandler::before {
+    .lyteGradientHandlerBeforeMixin();
+	content: "";
+    width: @w;
+    height: @h;
+    background-color: @bg-color;
+    display: inline-block;
+    position: absolute;
+    top: @top;
+    left: @left;
+	z-index: -1;
+}
+.lyteGradientHandelerSelected {
+    .lyteGradientHandelerSelectedMixin();
+	transform: @transform;
+	box-shadow:  @box-shadow;
+	border: @border;
+}
+.lyteGradientHandelerSelected::before {
+    .lyteGradientHandelerSelectedBeforeMixin();
+	height: @h;
+	top: @top;
+}

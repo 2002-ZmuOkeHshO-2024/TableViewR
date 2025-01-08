@@ -1,0 +1,23 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-radio-text-color: var(--lyte-common-text-color);
+  --lyte-radio-text-hover-color: var(--lyte-common-text-hover-color);
+  --lyte-radio-border-color: #aaa;
+  --lyte-radio-bg: var(--lyte-theme-body-bg);
+  --lyte-radio-default-bg-on-mode: #555;
+  --lyte-radio-primary-bg-on-mode: var(--lyte-theme-active-element-bg);
+  --lyte-radio-secondary-bg-on-mode: #72C98A;
+  --lyte-radio-switch-bg: #d3d3d3;
+  --lyte-radio-switch-circle-bg: #fff;
+  --lyte-radio-slider-circle-bg: #fff;
+  --lyte-radio-slider-boxshadow-color: 0 1px 2px 0 rgba(34, 36, 38, 0.15), 0 0 0 1px rgba(34,36,38,.15) inset;
+  --lyte-radio-slider-bar-bg: #b5b1b1;
+  --lyte-radio-slider-bar-checked-bg: #000;
+  --lyte-radio-button-font-size: var(--lyte-font-size-regular);
+}

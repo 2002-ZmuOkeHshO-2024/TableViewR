@@ -1,0 +1,44 @@
+<template class="main-container" tag-name="login-comp">
+
+
+
+
+
+    <div class="login-container">
+
+        <div class="input">
+            <!-- <span class="label-input">Username :</span> -->
+            <lyte-input lt-prop-id="username" class="username" lt-prop-direction='horizontal' lt-prop-appearance='box'
+                lt-prop-placeholder="your username" onkeydown="{{action('login',event)}}">
+            </lyte-input>
+        </div>
+
+        <div class="input">
+            <!-- <span class="label-input">Password :</span> -->
+            <lyte-input lt-prop-id="password" class="password" lt-prop-type='password' lt-prop-password-icon=true
+                lt-prop-direction='horizontal' lt-prop-appearance='box' lt-prop-placeholder="your password"
+                onkeydown="{{action('login',event)}}">
+            </lyte-input>
+        </div>
+
+
+        <div class="button">
+            <lyte-button lt-prop-class="login-button" lt-prop-id="unique" onclick="{{action('login',event)}}">
+                <template is="registerYield" yield-name="text">
+                    Login
+                </template>
+            </lyte-button>
+        </div>
+
+        <div class="register-text">
+            <span class="label-register"> new user ?</span>
+            <lyte-button lt-prop-class="register-button" onclick="{{action('register',event)}}" lt-prop-yield="true">
+                <template is="registerYield" yield-name="text">
+                    register
+                </template>
+            </lyte-button>
+
+        </div>
+
+    </div>
+</template>

@@ -1,0 +1,589 @@
+.lyteSchedulerMixin() {
+	@font-family: @lyteSchedulerRegularFont;
+	@color: @lyteSchedulerCommonTextColor;
+	@z-index: 5;
+}
+.lyteSchedulerEventTagMixin() {
+	@top: 0px;
+	@left: 5px;
+	@right: 5px;
+	@z-index: 5;
+	@border-radius: 5px;
+	@border: 1px solid #DEEEF9;
+}
+.lyteSchedulerEventTagSelectedElementMixin() {
+	@border: 1px solid #A5D2EF;
+	@bg-color: #F1F8FC;
+	@box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.08);
+}
+.lyteSchedulerMultiUserViewEventsTagMixin() {
+	@margin-top: 2px;
+}
+.lyteSchedulerMultiUserViewMonthEventsWrapEventTagMixin() {
+	@margin-top: 7px;
+}
+.lyteSchedulerMultiUserViewMonthViewEventTagMixin() {
+	@left: 0;
+}
+.lyteSchedulerMoreEventsPopupWrapperPopoverHeaderMixin() {
+	@font-family: @lyteSchedulerMediumFont;
+	@padding: .lyteLESSPaddingMixin(15px 50px 10px 15px)[@padding];
+}
+.lyteSchedulerMoreEventsPopupWrapperPopoverCloseMixin() {
+	@w: 9px;
+	@h: 9px;
+	@mask-pos: @bg-pos;
+	@bg-color: #000;
+	@bg-pos: -54px -1px;
+}
+.lyteSchedulerMoreEventsPopTitleMonthValMixin() {
+	@font-size: 11px;
+	@color: #676869;
+	@margin-bottom: 5px;
+}
+.lyteSchedulerMoreEventsPopTitleDayValMixin() {
+	@font-size: 15px;
+	@color: @lyteSchedulerCommonTextColor;
+}
+.lyteSchedulerMoreEventsPopupWrapperPopoverContentMixin() {
+	@padding: 0 15px 15px;
+}
+.lyteSchedulerDefaultHeaderMixin() {
+	@row-gap: 20px;
+}
+.lyteSchedulerViewMixin() {
+	@margin-right: auto;
+}
+.lyteSchedulerDateNavigatorMixin() {
+	@gap: 8px;
+}
+.lyteSchedulerNavigatorMonthLabelMixin() {
+	@font-family: @lyteSchedulerSemiBoldFont;
+	@margin: 0 5px 0 0;
+}
+.lyteSchNavigatorMonthLabelNextToDateLabelMixin() {
+	@margin-left: 5px;
+}
+.lyteSchedulerStartDateMixin() {
+	@font-size: 18px;
+	@padding: 5px 0;
+	display: flex;
+    gap: 5px;
+}
+.lyteSchedulerIconMixin() {
+	@w: 30px;
+	@h: 30px;
+	@border: 1px solid #C0C6CC;
+	@border-radius: 7px;
+}
+.lyteSchedulerIconHoverMixin() {
+	@bg: #F3F8FC;
+}
+.lyteSchedulerIconAfterMixin() {
+	@bg-img: @lytesprite;
+	@bg-pos: -363px -209px;
+	@mask-img: @bg-img;
+	@mask-pos: @bg-pos;
+	@bg-color: #292C2E;
+	@w: 18px;
+	@h: 17px;
+}
+.lyteSchNavigatorCalOpenedMixin() {
+	@bg-color: #dcedf9;
+	@box-shadow: 0px 0px 5px rgba(9, 132, 227, 0.12);
+}
+.lyteSchedulerTitleSeparatorMixin() {
+	@font-size: 13px;
+	@color: #676869;
+}
+.lyteSchedulerCalendarMixin() {
+	@z-index: 10;
+}
+.lyteSchedulerTitleDateMixin() {
+	@font-family: @lyteSchedulerSemiBoldFont;
+	@font-size: 16px;
+	@color: #152229;
+}
+.lyteSchedulerTitleDayMixin() {
+	@font-family: @lyteSchedulerMediumFont;
+	@font-size: 15px;
+	@color: #5B5D5F;
+	@margin-left: 10px;
+}
+.lyteSchedulerNavMixin() {
+	@border: 1px solid @lyteSchedulerNavButtonBorderColor;
+	@border-radius: 4px;
+}
+.lyteSchedulerBodyMixin() {
+	@margin: 15px 0px;
+	@border: 1px solid @lyteSchedulerTableBorderColor;
+}
+.lyteSchedulerWrapperClassTableMixin() {
+	@min-w: 100%;
+}
+.lyteSchedulerViewMainTableTheadMixin() {
+	@top: 0;
+	@z-index: 30;
+}
+.lyteSchedulerViewMainTableThMixin() {
+	@padding: 15px;
+	@bg: #f3f8fc;
+	@border-left: 1px solid @lyteSchedulerTableBorderColor;
+	@border-bottom: 1px solid @lyteSchedulerTableBorderColor;
+	@font-size: 15px;
+	@font-family: @lyteSchedulerMediumFont;
+	@min-w: calc(100% / 7);
+	@w: @min-w;
+}
+.lyteSchedulerViewMainTableWeekThMixin() {
+	@padding: 8px 15px;
+}
+.lyteSchedulerViewMainTableTdMixin() {
+	@bg: @lyteSchedulerCommonBg;
+	@border-left: 1px solid @lyteSchedulerTableBorderColor;
+	@border-top: 1px solid @lyteSchedulerTableBorderColor;
+}
+.lyteSchedulerMultiUserViewMonthViewMixin() {
+	@border-spacing: 12px 15px;
+}
+.lyteSchedulerMultiUserViewMonthViewTdMixin() {
+	@border: 1px solid #EAF0F5;
+	@border-radius: 5px;
+	@padding: 15px 10px 25px;
+	@min-w: 200px;
+}
+.lyteSchedulerMultiUserViewMonthViewTdFirstMixin() {
+	@border-left: 1px solid #EAF0F5;
+}
+.lyteSchedulerMonthYearLabelMixin() {
+	@color: #676869;
+	@font-size: 11px;
+	@font-family: @lyteSchedulerMediumFont;
+}
+.lyteSchedulerMultiUserMonthViewDateLabelMixin() {
+	@font-family: @lyteSchedulerSemiBoldFont;
+}
+.lyteSchedulerMultiUserMonthViewDateDayLabelMixin() {
+	@margin-top: 2px;
+	@margin-bottom: 15px;
+	@font-size: 15px;
+}
+.lyteSchedulerCurrentMonthDateHoverMixin() {
+	@bg: #fafbfc;
+	@border-top: 1px solid @lyteSchedulerCurrentMonthDateHoverBorderColor;
+}
+.lyteSchedulerMonthViewBodyOtherMonthDateHoverMixin() {
+	@bg: url(../../images/scheduler_linebg.png);
+}
+.lyteSchedulerDayViewAllDayRowTdMixin() {
+	@border-left: 1px solid @lyteSchedulerTableBorderColor;
+	@border-top: 0;
+}
+.lyteSchedulerDayViewAllDayRowTdFirstChildMixin() {
+	@w: 100px;
+	@padding-top: 15px;
+	@border-bottom: 0;
+}
+.lyteSchedulerWeekViewAllDayRowTdMixin() {
+	@border-bottom: 1px solid @lyteSchedulerTableBorderColor;
+}
+.lyteSchedulerWeekViewTrFirstChildTdMixin() {
+	@border-top: 0;
+}
+.lyteSchedulerWeekAndDayViewTdCommonMixin() {
+	@h: 70px;
+}
+.lyteSchedulerDayViewTdFirstChildMixin() {
+	@border-top: 1px solid transparent;
+	@color: #878889;
+	@text-align: @value-textalign-right;
+	@font-size: 15px;
+	@padding-right: 5px;
+}
+.lyteSchedulerWeekAndDayViewAllDayRowTdCommonMixin() {
+	@h: auto;
+	@max-h: 70px;
+}
+.lyteSchedulerDayOverlayTableDayViewAllDayRowTdMixin() {
+	@h: 20px;
+}
+.lyteSchedulerDayViewBusinessHourTdFirstChildMixin() {
+	@color: #292C2E;
+}
+.lyteSchedulerDayViewHourElemMixin() {
+	@border-top: 0;
+	@border-bottom: 1px solid @lyteSchedulerTableBorderColor;
+}
+.lyteSchedulerDayViewHourElemHoverMixin() {
+	@border-bottom: 1px solid #d2d4d6;
+	@bg: #fafbfc;
+}
+.lyteSchedulerWeekViewAllDayRowTdFirstChildMixin() {
+	@border-top: 1px solid @lyteSchedulerTableBorderColor;
+}
+.lyteSchedulerHourHalfLineAndQuarterLineMixin() {
+	@w: 24px;
+	@h: 1px;
+	@bg: @lyteSchedulerTimeLineColor;
+	@right: 5px;
+	@transform: translateY(-50%);
+}
+.lyteSchedulerHourHalfLineMixin() {
+	@top: 50%;
+}
+.lyteSchedulerHourQuarterLineMixin() {
+	@w: 13px;
+	@top: 25%;
+}
+.lyteSchedulerHourHalfLineWithImmediateSiblingQuarterLineMixin() {
+	@top: 75%;
+}
+.lyteSchedulerHourHalfLineBeforeMixin() {
+	@w: 5px;
+	@h: 5px;
+	@border-radius: 50%;
+	@left: 0;
+	@top: 50%;
+	@transform: translate(-50%, -50%);
+	@bg: inherit;
+}
+.lyteSchedulerViewMainTableThAndTdFirstMixin() {
+	@border-left: 0;
+}
+.lyteSchedulerDayNumberMixin() {
+	@font-family: @lyteSchedulerSemiBoldFont;
+	@font-size: 13px;
+	@color: #878889;
+	@w: 24px;
+	@h: 24px;
+	@bg: transparent;
+	@border: 1px solid transparent;
+	@line-height: 22px;
+	@border-radius: 4px;
+}
+.lyteSchedulerCurrentMonthDateDayNumberMixin() {
+	@color: #5b5d5f;
+}
+.lyteSchedulerMonthViewBodyTdHoverDayNumberMixin() {
+	@color: @lyteSchedulerCommonTextColor;
+	@bg: #ebedf0;
+}
+.lyteSchedulerCurrDateDayNumberMixin() {
+	@color: @lyteSchedulerCurrDateDayNumberTextColor;
+	@border: 1px solid @lyteSchedulerCurrDateDayNumberBorderColor;
+	@bg: @lyteSchedulerCommonBg;
+}
+.lyteSchedulerWeekOverlayTableMixin() {
+	@h: 100%;
+}
+.lyteSchedulerWeekThMixin() {
+	@w: calc( (100% - 100px) / 7);
+}
+.lyteSchedulerWeekThFirstChildMixin() {
+	@w: 100px;
+	@min-w: 100px;
+	@bg: @lyteSchedulerCommonBg;
+}
+.lyteSchedulerWeekThMonthLabelMixin() {
+	@color: #676869;
+	@font-size: 11px;
+	@margin-bottom: 3px;
+}
+.lyteSchedulerWeekThDateLabelMixin() {
+	@font-family: @lyteSchedulerBoldFont;
+	@font-size: 16px;
+}
+.lyteSchedulerWeekThDayLabelMixin() {
+	@font-family: @lyteSchedulerRegularFont;
+}
+.lyteSchedulerWeekThCurrDateMixin() {
+	@bg: @lyteSchedulerCommonBg;
+}
+.lyteSchedulerCurrDateLabelMixin() {
+	@color: @lyteSchedulerWeekViewCurrDateLabelTextColor;
+}
+.lyteSchedulerWeekTdMixin() {
+	@w: calc( (100% - 100px) / 7);
+}
+.lyteSchedulerWeekTdFirstChildMixin() {
+	@w: 100px;
+}
+.lyteSchedulerAllDayEventMixin() {
+	@padding: 3px 5px 25px;
+}
+.lyteSchedulerMonthViewBodyDateMixin() {
+	@h: 140px;
+	@text-align: @value-textalign-left;
+	@padding: 5px 5px 25px 5px;
+}
+.lyteSchedulerMonthViewBodyCurrDateMixin() {
+	@bg: #f9ffff;
+}
+.lyteSchedulerMonthViewBodyCurrDateHoverMixin() {
+	@border-top: 1px solid @lyteSchedulerCurrentDateHoverBorderColor;
+	@bg: #eef6fc;
+}
+.lyteSchedulerOverlayTagMixin() {
+	@w: 100%;
+	@h: 100%;
+	@bottom: 0;
+	@left: 0;
+	@right: 0;
+	@top: 0;
+}
+.lyteSchedulerOverlayMixin() {
+	@bottom: 0;
+	@left: 0;
+	@right: 0;
+	@top: 0;
+}
+.lyteSchedulerOverlaySchedulerDateMixin() {
+	@min-w: 0px;
+}
+.lyteSchedulerEventMoreBtnMixin() {
+	@font-family: @lyteSchedulerSemiBoldFont;
+	@font-size: 10px;
+	@color: @lyteSchedulerEventMoreBtnTextColor;
+	@padding: 2px 5px;
+	@left: 50%;
+	@transform: translateX(-50%);
+	@bottom: 3px;
+	@border-radius: 20px;
+	@bg: @lyteSchedulerEventMoreBtnBgColor;
+	@border: 1px solid @lyteSchedulerEventMoreBtnBorderColor;
+	@z-index: 5;
+}
+.lyteSchedulerEventMoreBtnAfterMixin() {
+	@w: 6px;
+	@h: 10px;
+	@mask-img: @lytesprite;
+	@mask-pos: -42px 0;
+	@bg-color: @lyteSchedulerEventMoreBtnArrowColor;
+	@transform: scale(0.8) rotate(90deg);
+	@margin-left: 2px;
+}
+.lyteSchedulerFreezeLayerMixin() {
+	@top: 0;
+	@left: 0;
+	@right: 0;
+	@bottom: 0;
+	@z-index: 5;
+	@bg: #000;
+	@opacity: 0.4;
+}
+.lyteSchedulerMultiUserViewEventElemMixin() {
+	@min-w: 120px;
+}
+.lyteSchedulerDayViewWrapperMultiUserRowThAndTdMixin() {
+	@w: 180px;
+	@min-w: 180px;
+	@border-bottom: 1px solid #E7E8E9;
+	@padding: 18px 2px;
+}
+.lyteSchedulerDayViewWrapperMultiUserRowThMixin() {
+	@text-align: @value-textalign-left;
+	@color: @lyteSchedulerCommonTextColor;
+	@font-size: 13px;
+	@font-family: @lyteSchedulerMediumFont;
+	@border-right: 1px solid transparent;
+	@padding: 10px 2px 0;
+	@top: 0;
+	@bg: #fff;
+	@z-index: 7;
+}
+.lyteSchedulerDayViewWrapperMultiUserRowFirstColHeaderMixin() {
+	@border-right: 1px solid #E7E8E9;
+}
+.lyteSchedulerDayViewWrapperMultiUserRowTdMixin() {
+	@padding: 3px 0 25px;
+	@border-right: 1px solid #E7E8E9;
+}
+.lyteSchedulerHourSplitLineWrapMixin() {
+	@margin-top: 12px;
+}
+.lyteSchedulerHourSplitLineMixin() {
+	@bg: @lyteSchedulerTimeLineColor;
+	@w: 1px;
+	@h: 14px;
+}
+.lyteSchedulerHourSeparatorLineMixin() {
+	@right: -1px;
+	@h: 25px;
+	@w: 1px;
+	@bg: @lyteSchedulerTimeLineColor;
+	@bottom: -1px;
+}
+.lyteSchedulerHourSeparatorLineAfterMixin() {
+	@w: 5px;
+	@h: 5px;
+	@border-radius: 50%;
+	@bg: @lyteSchedulerTimeLineColor;
+	@top: 0;
+	@left: 50%;
+	@transform: translate(-50%, -50%);
+}
+.lyteSchedulerMultiUserViewFirstColHeaderMixin() {
+	@bg: @lyteSchedulerCommonBg;
+	@left: 0;
+	@z-index: 5;
+	@border-right: 1px solid @lyteSchedulerTableBorderColor;
+}
+.lyteSchedulerMultiUserViewWeekViewUserColMixin() {
+	@text-align: @value-textalign-left;
+	@padding: 19px 10px;
+	@h: auto;
+	@color: @lyteSchedulerCommonTextColor;
+	@border-top: 1px solid @lyteSchedulerTableBorderColor;
+	@left: 0;
+	@z-index: 7;
+	@border-right: 1px solid @lyteSchedulerTableBorderColor;
+}
+.lyteSchedulerMultiUserViewWeekViewWrapperDateMixin() {
+	@padding: .lyteLESSPaddingMixin(3px 10px 25px 2px)[@padding];
+	@w: 180px;
+	@min-w: 180px;
+}
+.lyteSchedulerMultiUserViewWeekViewWrapperEventTagMixin() {
+	@left: 2px;
+	@right: 10px;
+}
+.lyteSchedulerMultiUserViewDayViewWrapperUserColMixin() {
+	@padding: 18px 10px;
+}
+.lyteSchedulerMultiUserViewWeekViewTrFirstChildTdMixin() {
+	@border-top: 0;
+}
+.lyteSchedulerMultiUserViewWeekViewHeaderThMixin() {
+	@border-bottom: 1px solid @lyteSchedulerTableBorderColor;
+}
+.lyteSchedulerDayViewWrapperFixedColMixin() {
+	@left: 0;
+	@bg: @lyteSchedulerCommonBg;
+	@z-index: 12;
+}
+.lyteSchedulerViewMainTableThNonBusinessDayMixin() {
+	@color: #f25c78;
+	@bg: #fcf5f6;
+}
+.lyteSchedulerNonBusinessDayLabelMixin() {
+	@color: #f25c78;
+}
+.lyteSchedulerViewGrouperItemBtnGroupWrapMixin() {
+	@padding: 2px;
+	@border: 1px solid #e3e3e3;
+	@border-radius: 8px;
+	@bg: #F3F8FC;
+}
+.lyteSchedulerViewButtonGroupBtnMixin() {
+	@bg: transparent;
+	@color: @lyteSchedulerCommonTextColor;
+	@font-size: 13px;
+	@border-radius: 5px;
+	@font-family: @lyteSchedulerMediumFont;
+	@padding: 7px 25px;
+}
+.lyteSchedulerViewButtonGroupBtnHoverMixin() {
+	@bg: #dcedf9;
+}
+.lyteSchedulerViewButtonGroupSelectedBtnMixin() {
+	@bg: @lyteSchedulerPeriodSwitcherSelectedBtnBg;
+	@color: @lyteSchedulerCommonBg;
+}
+.lyteSchedulerViewButtonGroupButtonAfterMixin() {
+	@h: 15px;
+	@w: 1px;
+	@bg: #e3e3e3;
+	@margin: 0 3px;
+	@border-radius: 3px;
+}
+.lyteSchedulerNavLeftMixin() {
+	@border-radius: 3px 0 0 3px;
+}
+.lyteSchedulerNavRightMixin() {
+	@border-radius: 0 3px 3px 0;
+}
+.lyteSchedulerNavLeftAndRightMixin() {
+	@padding: 10px 14px 10px 13px;
+}
+.lyteSchedulerNavLeftAndRightBeforeMixin() {
+	@bg-img: @lytesprite;
+	@w: 8px;
+	@h: 15px;
+}
+.lyteSchedulerNavLeftBeforeMixin() {
+	@bg-pos: -58px -29px;
+}
+.lyteSchedulerNavRightBeforeMixin() {
+	@bg-pos: -41px -29px;
+}
+.lyteSchedulerNavTodayBtnMixin() {
+	@padding: 10px 15px;
+	@border: 1px solid @lyteSchedulerNavButtonBorderColor;
+	@border-top: 0;
+	@border-bottom: 0;
+	@border-radius: 0;
+	@line-height: 1;
+	@color: inherit;
+}
+.lyteSchedulerNavLeftAndRightHoverMixin() {
+	@bg: #edf1f4;
+}
+.lyteSchedulerNavTodayHoverButtonDisabledMixin() {
+	@bg: transparent;
+}
+.lyteSchedulerWeekNumberMixin() {
+	@border: 1px solid #FAE472;
+	@bg: #FFF1A9;
+	@border-radius: 5px;
+	@padding: 2px 4px;
+	@font-size: 11px;
+}
+.lyteSchedulerDayViewWeekNumberMixin() {
+	@margin-left: 10px;
+}
+.lyteSchedulerMonthViewWeekNumberMixin() {
+	@bottom: 5px;
+	@left: 5px;
+}
+.lyteSchedulerMultiUserViewMonthViewWeekNumberMixin() {
+	@top: 30px;
+	@right: 10px;
+	@bottom: unset;
+	@left: unset;
+}
+.lyteSchedulerWeekViewWeekNumberMixin() {
+	@top: 50%;
+	@transform: translateY(-50%);
+	@left: 8px;
+}
+
+.lyteSchedulerGrabResizeMixin() {
+	@left: 50%;
+	@transform: translateX(-50%);
+	@bottom: 4px;
+	@h: 8px;
+	@w: 18px;
+}
+
+.lyteSchedulerGrabResizeBeforeAfterCommonMixin() {
+	@h: 1px;
+	@bg-color: #53677A;
+	@border-radius: 2px;
+	@opacity: 0;
+	@left: 50%;
+	@transform: translateX(-50%);
+}
+
+.lyteSchedulerGrabResizeAfterMixin() {
+	@w: 14px;
+	@bottom: 2px;
+}
+
+.lyteSchedulerGrabResizeBeforeMixin() {
+	@w: 8px;
+	@top: 2px;
+}
+
+.lyteSchedulerEventTagHoverGrabResizeBeforeAfterCommonMixin() {
+	@opacity: 1;
+}

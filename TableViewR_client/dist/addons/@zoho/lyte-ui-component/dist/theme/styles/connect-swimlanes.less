@@ -1,0 +1,32 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/connectswimlanes/connect-swimlanes.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{circularslider}/ui-elements/connectswimlanes/connect-swimlanes.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{connectswimlanes}/global/@{direction}.less";
+
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/connect-swimlanes.variables.less";
+
+lyte-connect-swimlanes{
+    display: flex;
+    position: relative;
+}
+.lyteConnectionSwimlanesMarker{
+    position: absolute;
+}
+lyte-connect-swimlanes lyte-connect{
+    position: absolute;
+    z-index: 2;
+}
+lyte-connect-swimlanes .lyteConnectionSelected{
+    pointer-events: none;
+    /* color: red; */
+}

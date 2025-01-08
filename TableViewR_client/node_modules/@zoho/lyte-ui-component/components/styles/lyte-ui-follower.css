@@ -1,0 +1,13 @@
+.lyteFollowerWrapper {
+    position: absolute;
+    font-family: 'LatoRegular', 'Open Sans', sans-serif;
+    font-size: 13px;
+    padding: 3px 8px;
+    background: #222;
+    color: #fff;
+    border-radius: 2px;
+    z-index: 1080;
+}
+.lyteFollowerContent {
+    white-space: pre-wrap;
+}

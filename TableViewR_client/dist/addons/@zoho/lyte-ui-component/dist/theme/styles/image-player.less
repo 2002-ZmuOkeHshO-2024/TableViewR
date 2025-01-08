@@ -1,0 +1,164 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/imageplayer/image-player.variables.less";
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{imageplayer}/ui-elements/imageplayer/image-player.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{imageplayer}/global/@{direction}.less";
+
+
+lyte-image-player {
+	.lyteImagePlayerMixin();
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	min-height: @min-height;
+}
+lyte-image-player.lyteFullScreenElement {
+	display: flex !important;
+}
+lyte-image-item {
+	overflow: auto;
+}
+lyte-image-item img {
+	.lyteImageItemImgMixin();
+	width: @w;
+	display: block;
+}
+
+.lyteImagePlayerSlider {
+	.lyteImagePlayerSliderMixin();
+	flex-grow: 1;
+	height: @h;
+	background: @bg;
+	position: relative;
+	outline: @outline;
+	border-radius: @border-radius;
+	cursor: pointer;
+	transition: 0.1s ease;
+}
+.lyteImagePlayerSlider:hover {
+	.lyteImagePlayerSliderHoverMixin();
+	height: @h;
+}
+.lyteImagePlayerFill {
+	.lyteImagePlayerFillMixin();
+	--lyte-image-player-fill-width: 0;
+	height: @h;
+	background: @bg;
+	border-radius: @border-radius;
+	transition-property: width;
+	transition-timing-function: linear;
+	width: @w;
+}
+.lyteImagePlayerControl {
+	.lyteImagePlayerControlMixin();
+	display: flex;
+	align-items: center;
+	position: relative;
+	/* background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #797979); */
+	background-color: @background-color;
+	padding: @padding;
+	font-size: @font-size;
+	color: @color;
+	gap: @gap;
+}
+.lyteImagePlayerHighlight {
+	.lyteImagePlayerHighlightMixin();
+	position: absolute;
+	display: inline-block;
+	width: @w;
+	height: @h;
+	border: @border;
+	border-top: @border-top;
+	border-bottom: @border-bottom;
+	left: @left;
+}
+.lyteImagePlayerSliderHandler {
+	.lyteImagePlayerSliderHandlerMixin();
+	--lyte-image-player-slider-handler-position: 0;
+	width: @w;
+	height: @h;
+	top: @top;
+	background: @bg;
+	cursor: pointer;
+	position: absolute;
+	transform: @transform;
+	border-radius: @border-radius;
+	transition-property: left,right;
+	transition-timing-function: linear;
+	left: @left;
+	outline: @outline;
+}
+.lyteImagePlayerSlider:hover .lyteImagePlayerSliderHandler {
+	.lyteImagePlayerSliderHoverLyteImagePlayerSliderHandlerMixin();
+	width: @w;
+	height: @h;
+}
+.lyteImagePlayerPlayIcon {
+	.lyteImagePlayerPlayIconMixin();
+	border: @border;
+	background-color: @background-color;
+	cursor: pointer;
+	padding: @padding;
+}
+.lyteImagePlayerPlayIcon::after {
+	.lyteImagePlayerPlayIconAfterMixin();
+	content: "";
+	-webkit-mask-image: @mask-image;
+	-webkit-mask-position: @mask-position;
+	mask-image: @mask-image;
+	mask-position: @mask-position;
+	width: @w;
+	height: @h;
+	background-color: @background-color;
+	display: block;
+}
+.lyteImagePlayerFinished .lyteImagePlayerPlayIcon::after,
+.lyteImagePlayerPaused .lyteImagePlayerPlayIcon::after {
+	.lyteImagePlayerPausedMixin();
+	mask-position: @mask-position;
+}
+lyte-image-player lyte-loader,
+.lytePlayerImageLoaded .lyteImagePlayerControl {
+	display: none;
+}
+lyte-image-player.lytePlayerImageLoading lyte-loader,
+lyte-image-player.lytePlayerImageLoading,
+.lyteImagePlayerFinished .lyteImagePlayerControl, 
+.lyteImagePlayerPaused .lyteImagePlayerControl,
+.lytePlayerImageLoaded:hover .lyteImagePlayerControl {
+	display: flex;
+}
+lyte-image-player .lyteLoaderFreeze {
+	.lyteImagePlayerLyteLoaderFreezeMixin();
+	background-color: @background-color;
+}
+lyte-image-player .lyteLoaderTimeoutMessage {
+	.lyteImagePlayerLyteLoaderTimeoutMessageMixin();
+	color: @color;
+}
+.lyteImagePlayerFullscreen {
+	.lyteImagePlayerFullscreenMixin();
+	-webkit-mask-image: @mask-image;
+	-webkit-mask-position: @mask-position;
+	mask-image: @mask-image;
+	mask-position: @mask-position;
+	background-color: @background-color;
+	border: @border;
+	width: @w;
+	height: @h;
+	cursor: pointer;
+}
+:fullscreen {
+	.lyteImagePlayerFullscreen {
+		.fullscreenMixin();
+		-webkit-mask-position: @mask-position;
+		mask-position: @mask-position;
+	}
+}

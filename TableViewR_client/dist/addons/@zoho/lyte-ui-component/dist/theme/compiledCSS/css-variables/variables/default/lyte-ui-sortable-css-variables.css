@@ -1,0 +1,13 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-sortable-placeholder-bg: #f6fad2;
+  --lyte-sortable-placeholder-border-color: #edf2c3;
+  --lyte-sortable-placeholder-disabled-bg: #f5c7c7;
+  --lyte-sortable-placeholder-disabled-border-color: #f4a7a7;
+}

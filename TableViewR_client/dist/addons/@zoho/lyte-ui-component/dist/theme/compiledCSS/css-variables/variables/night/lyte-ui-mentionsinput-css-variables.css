@@ -1,0 +1,20 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-mentionsinput-bg: var(--lyte-theme-body-bg);
+  --lyte-mentionsinput-text-color: var(--lyte-common-text-color2);
+  --lyte-mentionsinput-placeholder-text-color: #777;
+  --lyte-mentionsinput-border-color: #6f6f6f;
+  --lyte-mentionsinput-active-elem-bg: #555;
+  --lyte-mentionsinput-highlight-elem-bg: #429c50;
+  --lyte-mentionsinput-selected-val-bg: #5ba1e5;
+  --lyte-mentionsinput-zindex: var(--lyte-level4-zindex);
+  --lyte-mentionsinput-boxshadow-color: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --lyte-mentionsinput-textarea-font-size: var(--lyte-font-size-medium);
+  --lyte-mentionsinput-dropdown-item-font-size: var(--lyte-font-size-regular);
+}

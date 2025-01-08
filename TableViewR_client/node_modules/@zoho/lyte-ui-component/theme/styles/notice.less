@@ -1,0 +1,47 @@
+/* Default theme imported */
+@import "../themes/default/ui-elements/notice/notice.variables.less";
+
+
+
+
+/* Loading theme in configuration */
+@import "../config.less";
+@import (optional) "../themes/@{notice}/ui-elements/notice/notice.variables.less";
+
+/* rtl files loading */
+
+@import (multiple,optional) "../themes/default/global/@{direction}.less";
+
+@import (multiple,optional) "../themes/@{notice}/global/@{direction}.less";
+
+
+/* Loading final tweaks to your variables */
+@import (optional) "../overrides/ui-elements/notice.variables.less";
+
+lyte-notice {
+	display: block;
+}
+.lyteNotice {
+    .lyteNoticeMixin();
+	padding: @padding;
+	margin: @margin;
+}
+.lyteNotice .lyteNoticeContent {
+    .lyteNoticeContentMixin();
+	margin: @margin;
+}
+.lyteSuccessNotice {
+    .lyteSuccessNoticeMixin();
+	background: @bg;
+	border-left: @border-left;
+}
+.lyteFailureNotice {
+    .lyteFailureNoticeMixin();
+	background: @bg;
+	border-left: @border-left;
+}
+.lyteWarningNotice {
+    .lyteWarningNoticeMixin();
+	background: @bg;
+	border-left: @border-left;
+}

@@ -1,0 +1,40 @@
+/* Default theme imported */
+/* Loading theme in configuration */
+/* Themes of components */
+/* rtl files loading */
+.lyteCBoxGroupHorizontal {
+  display: flex;
+  flex-direction: row;
+}
+.lyteCBoxGroupVertical {
+  display: flex;
+  flex-direction: column;
+}
+.lyteCBoxGroupHorizontal lyte-checkbox {
+  margin-inline-end: 10px;
+}
+.lyteCBoxGroupHorizontal lyte-checkbox:last-of-type {
+  margin-inline-end: 0;
+}
+.lyteCBoxGroupVertical lyte-checkbox {
+  margin-bottom: 8px;
+}
+.lyteCBoxGroupVertical lyte-checkbox:last-of-type {
+  margin-bottom: 0;
+}
+.lyteCBoxGroupFieldSet {
+  display: flex;
+  border: 0;
+}
+.lyteCBoxGroupLegend {
+  font-family: var(--lyte-primary-font);
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #555;
+}
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */

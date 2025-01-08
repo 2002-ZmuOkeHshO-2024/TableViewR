@@ -1,0 +1,139 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+/* Default theme imported */
+/* Loading theme in configuration */
+/* rtl files loading */
+/* Loading custom themes */
+:root {
+  --lyte-landmark-section-role-color: #0984E3;
+  --lyte-landmark-banner-role-color: brown;
+  --lyte-landmark-complementary-role-color: green;
+  --lyte-landmark-contentinfo-role-color: #E74C3C;
+  --lyte-landmark-form-role-color: #000;
+  --lyte-landmark-main-role-color: #F2A62E;
+  --lyte-landmark-navigation-role-color: #3c98dd;
+  --lyte-landmark-search-role-color: #da3e3e;
+  --lyte-landmark-region-role-color: #df19df;
+}
+.lyteLandmarkMenuButtonWrap {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #333;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 20;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
+  gap: 5px;
+}
+.lyteLandmarkDragIcon {
+  display: flex;
+  padding: 5px;
+  gap: 3px;
+}
+.lyteLandmarkDragIcon::before,
+.lyteLandmarkDragIcon::after {
+  content: '';
+  -webkit-mask-image: url(../../images/sprite_lyte_night.svg);
+  -webkit-mask-position: -294px -4px;
+  mask-image: url(../../images/sprite_lyte_night.svg);
+  mask-position: -294px -4px;
+  width: 3px;
+  height: 13px;
+  background-color: #777;
+}
+.lyteLandmarkDragIcon:hover::before,
+.lyteLandmarkDragIcon:hover::after {
+  background: #333;
+}
+.lyteLandmarkButton lyte-icon.dropdown {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../../images/sprite_lyte_night.svg);
+  background-position: -1px -2px;
+  width: 8px;
+  height: 4px;
+  opacity: 0.5;
+  margin-left: 5px;
+}
+.lyteLandmarkButton.lyteMenuSelected .lyte-button,
+.lyteLandmarkButtonHighlight .lyte-button {
+  border: 1px solid #7fceef;
+}
+.ltLandmarkRoot [lt-prop-landmark][role] {
+  position: relative;
+  /* outline-offset: calc(-1 * var(--lyte-landmark-border-size)); */
+}
+.ltLandmarkRoot .ltLandmarkAbsoluteElem[lt-prop-landmark][role] {
+  position: absolute;
+}
+.ltLandmarkRoot [lt-prop-landmark][role="section"] {
+  outline: var(--lyte-landmark-border-size) solid var(--lyte-landmark-section-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="banner"] {
+  outline: var(--lyte-landmark-border-size) solid var(--lyte-landmark-banner-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="complementary"] {
+  outline: var(--lyte-landmark-border-size) solid var(--lyte-landmark-complementary-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="contentinfo"] {
+  outline: var(--lyte-landmark-border-size) solid var(--lyte-landmark-contentinfo-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="form"] {
+  outline: var(--lyte-landmark-border-size) solid var(--lyte-landmark-form-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="main"] {
+  outline: var(--lyte-landmark-border-size) solid var(--lyte-landmark-main-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="navigation"] {
+  outline: var(--lyte-landmark-border-size) solid var(--lyte-landmark-navigation-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="search"] {
+  outline: var(--lyte-landmark-border-size) solid var(--lyte-landmark-search-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="region"] {
+  outline: var(--lyte-landmark-border-size) solid var(--lyte-landmark-region-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role]::after {
+  content: attr(landmark-display-label);
+  position: absolute;
+  font-size: 10px;
+  top: 0;
+  right: 0;
+  padding: 2px 4px;
+  color: #fff;
+}
+.ltLandmarkRoot [lt-prop-landmark][role="section"]::after {
+  background-color: var(--lyte-landmark-section-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="banner"]::after {
+  background-color: var(--lyte-landmark-banner-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="complementary"]::after {
+  background-color: var(--lyte-landmark-complementary-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="contentinfo"]::after {
+  background-color: var(--lyte-landmark-contentinfo-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="form"]::after {
+  background-color: var(--lyte-landmark-form-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="main"]::after {
+  background-color: var(--lyte-landmark-main-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="navigation"]::after {
+  background-color: var(--lyte-landmark-navigation-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="search"]::after {
+  background-color: var(--lyte-landmark-search-role-color);
+}
+.ltLandmarkRoot [lt-prop-landmark][role="region"]::after {
+  background-color: var(--lyte-landmark-region-role-color);
+}

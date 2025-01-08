@@ -1,0 +1,127 @@
+/* Main container setup */
+.main2-container {
+
+
+    background-image: url('5083957.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+
+
+
+    display: grid;
+    /* Make it a grid */
+    grid-template-columns: 30% 40% 30%;
+    /* Define the columns (1fr, 3fr, 1fr) */
+    grid-template-rows: 33% 34% 33%;
+    /* Define the rows (1fr, 3fr, 1fr) */
+    height: 100vh;
+    /* Full viewport height */
+    width: 100vw;
+    /* Full width */
+    margin: 0;
+    padding: 0;
+}
+
+#new-password,
+#new-username {
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 17px;
+    color: aliceblue;
+    height: 100%;
+    padding: 20px;
+    font-style: oblique;
+}
+
+#new-password:focus,
+#new-username:focus {
+    box-shadow: 0 0 10px 5px rgba(140, 78, 215, 0.723);
+}
+
+
+
+
+
+
+.register-container {
+
+    display: grid;
+
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: 100%;
+    height: 100%;
+
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+
+}
+
+.register-container:hover {
+
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.new-username,
+.new-password {
+
+
+    align-self: stretch;
+    width: 60%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+
+.input2,
+.button2 {
+    display: flex;
+    justify-content: center;
+    /* Horizontally center */
+    align-items: center;
+
+
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.button2 {
+
+
+    margin-bottom: 20px;
+
+}
+
+.register-button2 {
+
+    font-family: "Arimo", serif;
+    background-color: #969104e9;
+    padding: 13px 25px;
+    font-size: 19px;
+    border-radius: 100px;
+    color: white;
+    border: none
+}
+
+.register-button2:hover {
+
+    font-weight: 1000;
+    font-family: "Arimo", serif;
+    background-color: #f4ef69e9;
+    padding: 16px 28px;
+    border-radius: 100px;
+    color: rgb(67, 63, 63);
+    border: none;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+}

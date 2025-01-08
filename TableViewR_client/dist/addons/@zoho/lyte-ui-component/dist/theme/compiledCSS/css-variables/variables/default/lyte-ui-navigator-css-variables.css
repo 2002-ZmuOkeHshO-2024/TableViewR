@@ -1,0 +1,18 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-navigator-text-color: var(--lyte-common-text-color);
+  --lyte-navigator-text-hover-color: var(--lyte-common-text-hover-color);
+  --lyte-navigator-num-hover-border-color: #aaa;
+  --lyte-navigator-arrow-border-color: #c4c4c4;
+  --lyte-navigator-active-color: var(--lyte-theme-active-element-bg);
+  --lyte-navigator-default-middle-text-color: #a2a2a2;
+  --lyte-navigator-simple-item-hover-bg: #e6f3fd;
+  --lyte-navigator-simple-active-item-text-color: #fff;
+  --lyte-navigator-font-size: var(--lyte-font-size-regular);
+}

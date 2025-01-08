@@ -1,0 +1,26 @@
+/* Default theme imported */
+/*	Icon Colors */
+/* Loading theme in configuration */
+/* Themes of components */
+/* Loading custom themes */
+/* import theme overrides */
+/* import custom css */
+:root {
+  --lyte-listbox-border-color: #d6d6d6;
+  --lyte-listbox-toolbar-icons-color: #eee;
+  --lyte-listbox-text-color: var(--lyte-common-text-color);
+  --lyte-listbox-active-text-color: var(--lyte-common-text-color2);
+  --lyte-listbox-bg: var(--lyte-theme-body-bg);
+  --lyte-listbox-toolbar-item-hover-border-color: #aaa;
+  --lyte-listbox-add-remove-icon-color: #444;
+  --lyte-listbox-element-hover-bg: #444;
+  --lyte-listbox-element-active-bg: #444;
+  --lyte-listbox-collapse-icon-color: #eee;
+  --lyte-listbox-badge-content-bg: #f00;
+  --lyte-listbox-badge-content-text-color: #fff;
+  --lyte-listbox-leftpanel-dropzone-bg: #f6fad2;
+  --lyte-listbox-leftpanel-dropzone-b-border-color: #57a5c6;
+  --lyte-listbox-noresults-text-color: #999;
+  --lyte-listbox-leftright-element-font-size: var(--lyte-font-size-medium);
+  --lyte-listbox-badge-content-font-size: var(--lyte-font-size-small);
+}

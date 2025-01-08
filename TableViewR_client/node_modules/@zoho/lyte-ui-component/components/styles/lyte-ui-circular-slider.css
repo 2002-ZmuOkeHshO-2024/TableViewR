@@ -1,0 +1,47 @@
+lyte-circular-slider {
+    display: block;
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+.lyteCirSliderHandler {
+    display: inline-block;
+    background-color: #fff;
+    border: 2px solid #3094D6;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    right: -4px !important;
+    border-radius: 50%;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.lyteCirSliderHandlerWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+.lytedisabled .lyteCirSliderOuterCircle {
+    stroke: #D7DBDE;
+}
+.lytedisabled .lyteCirSliderStrokeCircle {
+    stroke: #BABDBF;
+}
+.lytedisabled .lyteCirSliderHandler {
+    border: 1px solid #979797;
+}
+.lyteCirSliderHandler:focus-visible,
+.lyteCircularSliderDrag .lyteCirSliderHandler {
+    box-shadow: 1px 1px 5px 0px #0000002E;
+    outline: none;
+}
+.lyteCircularSliderAnimation .lyteCirSliderStrokeCircle {
+    transition: all 0.5s linear;
+}
+.lyteCircularSliderAnimation .lyteCirSliderHandlerWrapper {
+    transition: transform 0.5s linear;
+}
+  
